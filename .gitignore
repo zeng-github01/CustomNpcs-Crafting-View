@@ -30,6 +30,7 @@ whitelist.json
 *.DS_Store
 !gradlew.bat
 .factorypath
+gradle.properties
 CustomNPCs_code-1.6.4/
 CustomNPCs_code/
 CustomNPCs_code_fernflower/
