@@ -16,8 +16,7 @@ public class TooltipHelper extends GuiScreen {
         this.height = height;
     }
 
-    @SuppressWarnings("unchecked")
-    public static void drawHoveringText(GuiScreen gui, List<String> lines, int x, int y, FontRenderer fr) {
+    public static void drawHoveringText(GuiScreen gui, List lines, int x, int y, FontRenderer fr) {
         new TooltipHelper(gui.width, gui.height).drawHoveringText(lines, x, y, fr);
     }
 }

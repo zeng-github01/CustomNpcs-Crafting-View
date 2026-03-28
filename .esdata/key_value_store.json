@@ -1,0 +1,25 @@
+{
+    "statistics_cache_CustomNPCs-Crafting-View": {
+        "timestamp": 1774742177.5877194,
+        "data": {
+            "chat": {
+                "conversation_count": 0,
+                "total_input_tokens": 0,
+                "total_output_tokens": 0,
+                "total_tokens": 0,
+                "total_field1": 0
+            },
+            "file": {
+                "total_size": 66275492,
+                "file_count": 2212,
+                "dir_count": 328,
+                "root_dir": "D:\\code\\CustomNPCs-Crafting-View",
+                "stat_time": "2026-03-29 07:56:17"
+            }
+        }
+    },
+    "user_default_system_prompt": {
+        "userCustom": "",
+        "version": "1.0"
+    }
+}
