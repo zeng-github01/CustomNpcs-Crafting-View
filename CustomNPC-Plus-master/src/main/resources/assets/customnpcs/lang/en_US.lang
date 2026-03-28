@@ -1,0 +1,2473 @@
+customnpcs.defaultTextColor=404040
+
+key.categories.customnpc=CustomNPC+
+key.customnpcs.special=Special Key
+key.customnpcs.abilityHudKey=HUD Key
+key.customnpcs.abilityNext=Ability Next
+key.customnpcs.abilityPrev=Ability Previous
+key.npcInventory=NPC Inventory
+
+entity.CustomNpc.name=Custom Npc
+entity.customnpcs.CustomNpc.name=Custom Npc
+
+itemGroup.cnpcs=CustomNpcs Tools
+itemGroup.cnpcsw=CustomNpcs Weapons
+itemGroup.cnpcsa=CustomNpcs Armor
+itemGroup.cnpcsb=CustomNpcs Blocks
+itemGroup.cnpcsm=CustomNpcs Misc
+
+tile.npcRedstoneBlock.name=Redstone Block
+tile.npcCarpentyBench.name=Carpentry Bench
+tile.npcBloodBlock.name=Blood Block
+tile.npcMailbox.name=Mailbox
+tile.npcLocationBlock.name=Location Quest Block
+tile.npcBanner.name=Banner
+tile.npcWallBanner.name=Wall Banner
+tile.npcChair.name=Chair
+tile.npcCrate.name=Crate
+tile.npcTallLamp.name=Tall Lamp
+tile.npcShortLamp.name=Short Lamp
+tile.npcWeaponRack.name=Weapon Rack
+tile.npcCouchWool.name=Wool Couch
+tile.npcTable.name=Wooden Table
+tile.npcCouchWood.name=Wooden Couch
+tile.npcLamp.name=Lantern
+tile.npcCandle.name=Candle
+tile.npcStool.name=Stool
+tile.npcBorder.name=Border
+tile.npcBigSign.name=Big Sign
+tile.npcBarrel.name=Barrel
+tile.npcShelf.name=Shelf
+tile.npcSign.name=Sign
+tile.npcTombstone.name=Tombstone
+tile.npcCampfire.name=Campfire
+tile.npcBeam.name=Beam
+tile.npcPedestal.name=Pedestal
+tile.npcPlaceholder_0.name=Placeholder
+tile.npcPlaceholder_1.name=Placeholder
+tile.npcPlaceholder_2.name=Placeholder
+tile.npcPlaceholder_3.name=Placeholder
+tile.npcPlaceholder_4.name=Placeholder
+tile.npcPlaceholder_5.name=Placeholder
+tile.npcPlaceholder_6.name=Placeholder
+tile.npcPlaceholder_7.name=Placeholder
+tile.npcPlaceholder_8.name=Placeholder
+tile.npcPlaceholder_9.name=Placeholder
+tile.npcPlaceholder_10.name=Placeholder
+tile.npcPlaceholder_11.name=Placeholder
+tile.npcPlaceholder_12.name=Placeholder
+tile.npcPlaceholder_13.name=Placeholder
+tile.npcPlaceholder_14.name=Placeholder
+tile.npcPlaceholder_15.name=Placeholder
+tile.npcScripted.name=Scripted Block
+
+gui.delete=Are you sure you want to delete this?
+gui.add=Add
+gui.view=View
+gui.remove=Remove
+gui.save=Save
+gui.name=Name
+gui.displayName=Display Name
+gui.color=Color
+gui.none=None
+gui.time=Time
+gui.title=Title
+gui.categories=Categories
+gui.close=Close
+gui.disabled=Disabled
+gui.increase=Increase
+gui.decrease=Decrease
+gui.day=Day
+gui.night=Night
+gui.constant=Constant
+gui.accelerate=Accelerate
+gui.small=Small
+gui.medium=Med
+gui.large=Large
+gui.type=Type
+gui.retaliate=Retaliate
+gui.panic=Panic
+gui.retreat=Retreat
+gui.nothing=Nothing
+gui.break=Break
+gui.open=Open
+gui.darkness=Darkness
+gui.sunlight=Sunlight
+gui.always=Always
+gui.untilclose=UntilClose
+gui.whenavailable=OnTheMove
+gui.ignoreDamage=Ignore Damage
+gui.ignoreNBT=Ignore NBT
+gui.ignoreMatDamage=Ignore Material DMG
+gui.ignoreMatNBT=Ignore Material NBT
+gui.ignoreItemNBT=Ignore Item NBT
+gui.repairPercent=Repair %
+gui.material=Material
+gui.xpCost=XP Cost
+gui.recordHistory=Record History
+gui.minrange=MinimumRange
+gui.engagedistance=EngageDistance
+gui.orbitdistance=OrbitDistance
+gui.fightifthisclose=FightIfThisClose
+gui.ambushdistance=AmbushDistance
+gui.combatchance=CombatChance
+gui.whendistant=WhenDistant
+gui.whenhidden=WhenHidden
+gui.currentFolder=Current Folder
+gui.play=Play
+gui.selectSound=Select Sound
+gui.selectnpc=Select NPC
+gui.select=Select
+gui.sync=Sync
+gui.range=Range
+gui.partly=Partially
+gui.copy=Copy
+gui.clear=Clear
+gui.builtin=Built-in
+gui.custom=Custom
+gui.chained=Chained
+gui.builtinAnimations=Built-in Animations
+gui.customAnimations=Custom Animations
+gui.done=Done
+gui.paste=Paste
+gui.test=Test
+gui.settings=Settings
+gui.build=Build
+gui.enabled=Enabled
+gui.website=Website
+gui.text=Text
+gui.detailed=Detailed
+gui.server=Server
+gui.showmore=Show More
+gui.update=Update
+gui.editor=Editor
+gui.playernearby=Player nearby
+gui.forum=Forum
+gui.id=ID
+gui.widthHeight=Width & Height
+gui.position=Position
+gui.screen=Screen
+gui.option=Option
+gui.default=Default
+gui.edit=Edit
+gui.reset=Reset
+gui.filters=Filters
+gui.selectAll=Select All
+gui.deselectAll=Deselect All
+gui.loading=Loading
+gui.off=Off
+gui.on=On
+gui.fullscreen=FULL
+gui.fullscreen.tooltip=Designed for Fullscreen Mode
+gui.addCategory=Add Category
+gui.sure=Are you sure?
+gui.available=Requirements Met
+gui.items=Items
+gui.npcs=NPCs
+gui.change=Change
+gui.create=Create
+gui.rename=Rename
+gui.playerMap=Regen PlayerMap
+gui.unused=Unused
+gui.apply=Apply
+gui.cancel=Cancel
+gui.continue=Continue
+gui.back=Back
+gui.yes=Yes
+gui.abilities=Abilities
+gui.toggles=Toggles
+gui.toggle=Toggle
+gui.toggle.active=Active
+gui.toggle.inactive=Inactive
+gui.abilityHotbar=Ability Hotbar
+
+gui.lineColor1=Upper line color
+gui.lineColor2=Middle line color
+gui.lineColor3=Lower line color
+gui.slotColour=Slots color
+gui.buttonAcceptColour=Accept button color
+gui.buttonRejectColour=Reject button color
+gui.animated=Animated
+gui.animated.hover=Textures with a .mcmeta file animate automatically.\nEnable this for manual animation of sprite sheet textures.
+gui.frameCount=Frame Count
+gui.frameTime=Frame Time
+questgui.doyouaccept=Do you accept the quest?
+questgui.bringitems=Bring items
+questgui.readdialog=Read dialog
+questgui.killmobs=Kill mobs
+questgui.findlocation=Find location
+questgui.defeat=Defeat
+questgui.objectives=Objectives:
+questgui.rewards=Rewards:
+questgui.experience=Experience: 
+questgui.reject=Reject
+questgui.accept=Accept
+
+party.accept=Accept
+party.allowParty=Allow Partying
+party.createParty=Create Party
+party.disbandParty=Disband Party
+party.disbandConfirm=Are you sure you want to disband the party?
+party.dropQuest=Drop Quest
+party.friendlyFire=Friendly Fire
+party.ignore=Ignore
+party.invite=Invite
+party.setChat=Party quest set to
+party.completeChat=The party quest has been completed!
+party.turnedInChat=The party quest is ready to be turned in!
+
+party.kick=Kick
+party.kickConfirm=Are you sure you want to kick this player?
+party.leader=Leader
+party.all=All
+party.enrolled=Enrolled
+party.valid=Valid
+party.shared=Shared
+party.leaderConfirm=Are you sure you want to make this player the party leader?
+party.leaveParty=Leave Party
+party.leaveConfirm=Are you sure you want to leave the party?
+party.inviteAlert=Invited to Party
+party.inviteChat=You've been invited to a party by
+party.kickYouChat=You've been kicked from the party
+party.kickYouAlert=Kicked from Party
+party.kickOtherChat=has been kicked from the party
+party.kickOtherAlert=Kicked Player
+party.leaveYouChat=You've left the party
+party.leaveYouAlert=Left Party
+party.leaveOtherChat=has left the party
+party.leaveOtherAlert=Leaving Player
+party.disbandAlert=Party Disbanded
+party.disbandMessage=The party has been disbanded
+party.setLeader=Set Leader
+party.track=Track Quest
+party.only=Only Party
+party.minPartySize=Min Size
+party.maxPartySize=Max Size
+party.options=Party Options
+party.completeFor=Complete for
+party.commandFor=Execute Command for
+party.party=Party
+party.partying=Partying!
+party.messageNoParty=You're not in a party! Either wait for an invite or create one.
+party.partyRequirements=Required by
+party.setQuestConfirm=Setting a Quest to a party will clear its progress!
+party.dropQuestConfirm=Are you sure you want to drop the party quest?
+
+settings.chatBubbles=Chat Bubbles
+settings.trackAlignment=Tracking Alignment
+settings.dialogSound=Dialog Sound
+settings.dialogSpeed=Dialog Speed
+settings.chatAlerts=Chat Alerts
+settings.bannerAlerts=Banner Alerts
+settings.effectsBar=Hide Effects Bar
+settings.alignmentX=Alignment X
+settings.alignmentY=Alignment Y
+settings.trackScale=Tracking Scale
+settings.clearTrack=Clear Tracked Quest
+settings.confirmClearTrack=Are you sure you want to clear your tracked quest?
+settings.clearSkin=Clear Skin Cache
+settings.confirmClearSkin=Are you sure you want to clear your skin cache?
+settings.hud=Hud Editor
+
+scale.shared=Shared
+filter.contains=Contains
+filter.any=Any
+filter.all=All
+filter.notany=Not Any
+filter.notall=Not All
+
+remote.title=Nearby NPCs
+remote.reset=Reset
+remote.tp=Tp to
+remote.resetall=Reset All
+remote.freeze=Freeze NPCs
+
+spawner.entities=Entities
+spawner.clones=Clones
+spawner.clones2=Clones 2
+spawner.clones3=Clones 3
+spawner.clones4=Clones 4
+spawner.mobspawner=Spawner
+spawner.mount=Mount by
+spawner.mountplayer=Player mounts
+
+spawner.posoffset=Position Offset
+spawner.type=Spawn Type
+spawner.all=All
+spawner.random=Random
+spawner.one=One by One
+spawner.summoner=Summoner Dies
+spawner.diesafter=Summoner Dies when Spawns Die
+spawner.despawn=Clear Spawns On Target Lost
+spawner.despawnsummon=Clear Spawns On Summoner Death
+
+mailbox.name=Mailbox
+mailbox.sender=Sender
+mailbox.read=Read
+mailbox.timesend=%s ago
+mailbox.day=Day
+mailbox.days=Days
+mailbox.hour=Hour
+mailbox.hours=Hours
+mailbox.minute=Minute
+mailbox.minutes=Minutes
+mailbox.seconds=Seconds
+mailbox.username=Username
+mailbox.subject=Subject
+mailbox.send=Send
+mailbox.write=Write Message
+mailbox.succes=Succesfully sent your mail to %s
+mailbox.errorUsername=Unknown username
+mailbox.errorSubject=Subject cant be empty
+mailbox.setup=Setup Mail
+
+display.model=Model
+display.show=Show
+display.hide=Hide
+display.all=All
+display.showAttacking=Show when attacking
+display.size=Size
+display.texture=Texture
+display.cape=Cape
+display.overlay=Overlay
+display.player=Player
+display.selectTexture=Select Texture
+display.livingAnimation=Has a living animation
+display.visible=Visible
+display.bossbar=BossBar
+display.squareTexture=Square Texture
+display.url=Url
+display.urlSix=Url64
+display.alpha=Alpha
+display.alignment=Alignment
+display.topLeft=Top Left
+display.topCenter=Top Center
+display.topRight=Top Right
+display.left=Left
+display.center=Center
+display.right=Right
+display.botLeft=Bottom Left
+display.botCenter=Bottom Center
+display.botRight=Bottom Right
+display.bottom=Bottom
+display.top=Top
+display.fixed=Fixed
+display.glow=Glow
+display.solid=Solid
+display.tintsettings=Tint Settings
+display.hitboxsettings=Hitbox Settings
+display.version=Version
+display.versionInfo=Sends Version Update to all Items
+display.maxStack=Max Stack Size
+display.useAction=Use Action
+display.armor=Armor Type
+display.enchantability=Enchantability
+display.digSpeed=Dig Speed
+display.color=Color
+display.durabilityShow=Show Durability
+display.isTool=Is Tool
+display.isNormalItem=Is Normal Item
+display.isToolInfo=Modifies Tool Utility and Rendering
+display.isNormalItemInfo=Changes Item Rendering. Scaling and Rotation will not work
+
+use_action.none=None
+use_action.block=Block
+use_action.eat=Eat
+use_action.drink=Drink
+use_action.bow=Bow
+
+armor_type.none=None
+armor_type.all=All
+armor_type.head=Helm
+armor_type.chestplate=Chestplate
+armor_type.leggings=Leggings
+armor_type.boots=Boots
+
+inv.minExp=Min Exp
+inv.maxExp=Max Exp
+inv.npcInventory=NPC Inventory
+inv.inventory=Inventory
+inv.dropChance=Drop chance
+inv.auto=Auto Pickup
+
+availability.options=Availability Options
+availability.always=Always
+availability.after=After
+availability.before=Before
+availability.available=Available
+availability.whenactive=When Active
+availability.whennotactive=When Not Active
+availability.acceptable=Acceptable
+availability.notacceptable=Not Acceptable
+availability.selectquest=Select Quest
+availability.selectdialog=Select Dialog
+availability.selectfaction=Select Faction
+availability.daytime=Daytime
+availability.wholeday=Whole day
+availability.night=During the night
+availability.day=During the day
+availability.is=Is
+availability.isnot=Is not
+availability.minlevel=Exp lvl
+availability.name=Availability
+availability.areaNotAvailble=You can't go this way
+availability.permission=You don't have permission to do this
+availability.editIcon=For the next 10 seconds you can set any item icon by right clicking
+
+availability.error.day=Only During Day
+availability.error.night=Only During Night
+availability.error.dialog=%s Dialog %d
+availability.error.quest=%s Quest %d
+availability.error.faction=%s %s Faction %d
+availability.error.xp=Exp Level %d
+
+spawning.availableBiomes=Available Biomes
+spawning.spawningBiomes=Spawning Biomes
+spawning.availableDimensions=Available Dimensions
+spawning.spawningDimensions=Spawning Dimensions
+spawning.biomes=Biomes
+spawning.weightedChance=Weighted Chance
+spawning.options=Spawning Options
+spawning.animalSpawning=Spawns Like Animal
+spawning.monsterSpawning=Spawns Like Monster
+spawning.liquidSpawning=Spawns in Liquid
+spawning.airSpawning=Spawns in Air
+spawning.minHeight=Minimum Height
+spawning.maxHeight=Maximum Height
+spawning.maxAlive=Max Alive (0 = Unlimited)
+spawning.cooldownTicks=Cooldown (Ticks)
+spawning.attemptsPerCycle=Attempts Per Cycle
+spawning.playerMinDistance=Min Player Distance
+spawning.despawnMode=Despawn Mode
+spawning.despawn.forceNatural=Force Natural
+spawning.despawn.preserve=Preserve Template
+spawning.despawn.forcePersistent=Force Persistent
+spawning.naturalInfo=Add at least one spawn entry and configure spawn options for the NPC to spawn naturally
+spawning.naturalInfoPerformance=Natural Spawn Setup\nBest performance baseline:\n- maxAlive: 20-60\n- cooldownTicks: 200-600\n- attemptsPerCycle: 1-2\n- playerMinDistance: 32-48\n- despawnMode: Force Natural
+tooltip.naturalspawns.main.addProfile=Create a new natural spawn profile.\nBest performance: Keep profile count focused by biome/theme.
+tooltip.naturalspawns.main.removeProfile=Delete the selected natural spawn profile.\nBest performance: Remove unused profiles to reduce selection overhead.
+tooltip.naturalspawns.main.search=Filter spawn profiles by name.\nTip: Use biome/type prefixes for faster maintenance.
+tooltip.naturalspawns.main.biomes=Choose biomes this profile can spawn in.\nBest performance: Use only needed biomes.
+tooltip.naturalspawns.main.dimensions=Choose dimensions this profile can spawn in.\nBest performance: Limit to required dimensions.
+tooltip.naturalspawns.main.options=Open advanced spawn controls.\nBest performance: Configure cap, cooldown, attempts, and despawn mode.
+tooltip.naturalspawns.main.addEntry=Add an entry slot to this profile.\nBest performance: Keep only active entries.
+tooltip.naturalspawns.main.removeEntry=Remove selected entry slot.\nBest performance: Remove empty/duplicate entries.
+tooltip.naturalspawns.main.slot=Entry slot index.\nTip: Keep numbering organized for easier debugging.
+tooltip.naturalspawns.main.selectEntry=Select which clone/NPC this slot spawns.\nBest performance: Avoid very heavy scripted clones in high-frequency profiles.
+tooltip.naturalspawns.options.animal=Spawn Rule: Animal\nUses animal-style spawn checks (surface + creature-valid blocks).\nUse for passive/overworld mobs.\nPerformance: Disable if not needed.
+tooltip.naturalspawns.options.monster=Spawn Rule: Monster\nUses monster-style spawn checks (surface + monster-valid blocks).\nUse for hostile/night/cave mobs.\nPerformance: Disable if not needed.
+tooltip.naturalspawns.options.liquid=Spawn Rule: Liquid\nAllows spawn validation in liquid/water spaces.\nUse only for aquatic entries.\nPerformance: Keep OFF unless required.
+tooltip.naturalspawns.options.air=Spawn Rule: Air\nAllows spawn validation in open-air columns.\nUse only for flying/airborne entries.\nPerformance: Keep OFF unless required.
+tooltip.naturalspawns.options.minHeight=Minimum Spawn Y\nLower vertical bound for this profile.\nUse with Max Height to narrow valid layers.\nPerformance: Tighter ranges = fewer failed checks.
+tooltip.naturalspawns.options.maxHeight=Maximum Spawn Y\nUpper vertical bound for this profile.\nUse with Min Height to target a specific layer.\nPerformance: Tighter ranges = fewer failed checks.
+tooltip.naturalspawns.options.maxAlive=Max Alive (Per Profile)\nCounts loaded entities tagged to this natural spawn profile.\n0 = Unlimited (not recommended).\nPerformance baseline: 20-60.
+tooltip.naturalspawns.options.cooldownTicks=Cooldown (Ticks)\nWait time after a successful spawn before this profile can spawn again.\n20 ticks = 1 second.\nPerformance baseline: 200-600 (10-30 seconds).
+tooltip.naturalspawns.options.attemptsPerCycle=Attempts Per Cycle\nHow many nearby positions this profile tests each cycle.\nHigher values increase spawn pressure and CPU checks.\nPerformance baseline: 1-2.
+tooltip.naturalspawns.options.playerMinDistance=Min Player Distance\nBlocks from nearest player where spawning is blocked.\nHigher values reduce pop-in near players.\nPerformance baseline: 32-48.
+tooltip.naturalspawns.options.despawnMode=Despawn Mode (CNPC entries)\nForce Natural: sets canDespawn=true on spawn. Recommended for natural ecosystems.\nPreserve Template: keeps clone/template despawn setting.\nForce Persistent: sets canDespawn=false (NPC stays loaded longer).\nPerformance recommendation: Force Natural.
+
+role.name=Role
+role.none=No Role
+role.trader=Trader
+role.follower=Follower
+role.bank=Bank
+role.transporter=Transporter
+role.mailman=Mailman
+role.marketname=Linked Marketname
+role.companion=Companion
+role.mount=Mount
+role.mount.offsetx=Seat X
+role.mount.offsety=Seat Y
+role.mount.offsetz=Seat Z
+role.mount.jumpheight=Jump
+role.mount.sprint=Sprint
+role.mount.fly=Flying
+role.mount.hover=Hover
+role.mount.ascendspeed=Ascend Speed
+role.mount.descendspeed=Descend Speed
+role.mount.walkspeed=Walk Speed: %s
+role.auctioneer=Auctioneer
+role.auctioneer.tabs=Tab Visibility
+role.auctioneer.showBrowse=Show Browse
+role.auctioneer.showMyListings=Show My Listings
+role.auctioneer.showMyBids=Show My Bids
+role.auctioneer.showClaims=Show Claims
+role.auctioneer.actions=Player Actions
+role.auctioneer.allowCreate=Allow Create
+role.auctioneer.allowBid=Allow Bid
+role.auctioneer.allowBuyout=Allow Buyout
+role.auctioneer.messages=Messages
+role.auctioneer.welcome=Welcome Message
+role.auctioneer.noAuction=Auction Disabled Message
+
+trader.unavailable=Unavailable
+trader.insufficient.currency=Insufficient Balance
+trader.available=Available
+trader.slotdisabled=Slot Disabled
+trader.currencycost=Cost
+trader.outofstock=Out of Stock
+trader.instock=in stock
+trader.restock=Restock
+trader.balance=Balance
+trader.reopentrader=Reopen Trader
+
+stock.options=Stock Options
+stock.enable=Enable Stock
+stock.perplayer=Per-Player
+stock.resettype=Reset Type
+stock.customtime=Custom Time
+stock.defaultmax=Default Max
+stock.perslot=Per-Slot Stock
+stock.reset=Reset Stock
+stock.resetcooldown=Reset Cooldown
+stock.perslot.title=Per-Slot Stock Limits
+stock.reset.confirm=Reset all stock?
+stock.reset.warning=This cannot be undone.
+stock.cooldown.confirm=Reset cooldown timer?
+stock.cooldown.warning=Stock will reset on next open.
+
+stock.reset.never=Never
+stock.reset.mcdaily=MC Daily
+stock.reset.mcweekly=MC Weekly
+stock.reset.mccustom=MC Custom
+stock.reset.rldaily=RL Daily
+stock.reset.rlweekly=RL Weekly
+stock.reset.rlcustom=RL Custom
+
+stock.options.hover=Configure stock limits and reset timers
+stock.enable.hover=Enable limited stock for trade slots
+stock.perplayer.hover=Track stock separately for each player
+stock.resettype.hover=When stock automatically replenishes
+stock.customtime.hover=Set a custom reset interval
+stock.defaultmax.hover=Default max stock for all slots (-1 = unlimited)
+stock.perslot.hover=Set max stock for individual slots
+stock.reset.hover=Reset all stock to max values
+stock.resetcooldown.hover=Force stock to reset on next trader open
+
+gui.settings.hover=Configure trading options
+gui.ignoreDamage.hover=Ignore item damage when comparing currency
+gui.ignoreNBT.hover=Ignore NBT data when comparing currency
+gui.recordHistory.hover=Record purchase history for analytics
+
+job.name=Job
+job.none=No Job
+job.guard=Guard
+job.healer=Healer
+job.bard=Bard
+job.itemgiver=Item Giver
+job.boss=Boss
+job.spawner=Spawner
+job.conversation=Conversation
+job.chunkloader=Chunk Loader
+job.puppet=Puppet
+
+stats.health=Health
+stats.aggro=AggroRange
+stats.projectileproperties=ProjectileType
+stats.meleestrength=MeleeStrength
+stats.meleerange=MeleeRange
+stats.meleespeed=MeleeSpeed
+stats.swingwarmup=SwingWarmup
+stats.accuracy=Accuracy(%)
+stats.rangedrange=RangedRange
+stats.burstspeed=FireRate
+stats.mindelay=MinDelay
+stats.maxdelay=MaxDelay
+stats.burstcount=BurstCount
+stats.shotcount=ShotCount
+stats.walkspeed=WalkSpeed
+stats.meleeeffect=Effect(s)
+stats.respawn=Respawn
+stats.deadbody=HideDeadBody
+stats.fireimmune=ImmuneToFire
+stats.candrown=Drowns
+stats.firesound=SoundFX
+stats.creaturetype=CreatureType
+stats.normal=Normal
+stats.reverse=Reverse
+stats.undead=Undead
+stats.arthropod=Arthropod
+stats.nofalldamage=NoFallDamage
+stats.meleeproperties=MeleeOptions
+stats.rangedproperties=RangedOptions
+stats.burninsun=BurnsInSun
+stats.amplify=Amplified
+stats.melee=Melee
+stats.disabledamage=DisableDamage
+stats.disabletrue=Damage is currently disabled in Stats
+stats.regenhealth=Health Regen
+stats.combatregen=Combat Regen
+stats.naturallydespawns=Naturally Despawn
+stats.aimWhileShooting=Aim While Shooting
+stats.invincibility=Invincibility
+stats.allowed=ALLOWED
+stats.ignored=IGNORED
+stats.potionImmune=PotionImmune
+stats.attackInvisible=Attack Invi
+stats.never=Never
+stats.inWater=In Water
+stats.inAir=In Air
+stats.collides=CollisionWith
+
+stats.size=Size
+stats.speed=Speed
+stats.glows=Glows
+stats.noglow=NoGlow
+stats.hasgravity=HasGravity
+stats.explosive=Explodes
+stats.rangedeffect=Effect
+stats.trail=TrailType
+stats.spin=Spins
+stats.stick=Sticks
+stats.regular=No Amp
+stats.amplified=Amp
+stats.explosion=Explosion
+stats.onShot=On Shot
+stats.onStart=On Start
+stats.burnItem=Burn Item
+
+ai.standing=Standing
+ai.wandering=Wandering
+ai.movingpath=Moving Path
+ai.looping=Looping
+ai.backtracking=Backtracking
+ai.enemyresponse=OnFoundEnemy
+ai.door=DoorInteract
+ai.avoidwater=AvoidsWater
+ai.return=ReturnToStart
+ai.swim=CanSwim
+ai.shelter=ShelterFrom
+ai.leapattarget=LeapAtTarget
+ai.sprint=CanSprint
+ai.clearlos=MustSeeTarget
+ai.indirect=CanFireIndirect
+ai.rangemelee=UseRangeAttack
+ai.tacticalvariant=TacticalVariant
+ai.cobwebAffected=CobwebAffected
+ai.movement=Movement
+ai.combatpolicy=CombatPolicy
+ai.jump=Jump
+ai.pounce=Pounce
+
+movement.ground=Ground
+movement.flying=Flying
+fly.speed=Flying Speed
+fly.gravity=Flying Gravity
+
+aitactics.rush=Rush
+aitactics.stagger=Dodge
+aitactics.orbit=Surround
+aitactics.hitandrun=Hit&Run
+aitactics.ambush=Ambush
+aitactics.stalk=Stalk
+
+aicombat.flip=Flip
+aicombat.brute=Brute
+aicombat.stubborn=Stubborn
+aicombat.tactical=Tactical
+
+advanced.idlesound=LivingSound
+advanced.angersound=AngrySound
+advanced.hurtsound=HurtSound
+advanced.deathsound=DeathSound
+advanced.stepsound=StepSound
+advanced.sounds=Sounds
+advanced.lines=Lines
+advanced.night=Night
+advanced.editingmode=EditingMode
+advanced.loadday=Load Day
+advanced.loadnight=Load Night
+advanced.haspitch=Has Pitch
+advanced.marks=Marks
+
+faction.hostiles=Hostile Factions
+faction.unfriendly=Unfriendly
+faction.neutral=Neutral
+faction.friendly=Friendly
+faction.points=Points
+faction.ondeath=On death
+faction.hidden=Hidden
+faction.hidden.hover=Hides this faction from the player's faction standings UI
+faction.default=Default
+faction.attackHostile=Attack hostile factions
+faction.defend=Defence faction members
+faction.nostanding=You have no standings with any faction
+faction.options=Faction Options
+faction.increasepoints=Faction %s increased by %s points
+faction.decreasepoints=Faction %s decreased by %s points
+faction.attacked=Attacked by mobs
+faction.attacked.hover=Whether vanilla mobs will target and attack NPCs in this faction
+faction.passive=Is Passive
+faction.passive.hover=Passive faction NPCs cannot be damaged and will not queue any attacking tasks [Good for Performance]
+
+menu.inventory=Inventory
+menu.display=Display
+menu.stats=Stats
+menu.factions=Factions
+menu.ai=AI
+menu.advanced=Advanced
+menu.global=Global
+menu.role=Role
+menu.animations=Animations
+menu.tags=Tags
+menu.general=General
+menu.magics=Magics
+menu.cycles=Cycles
+menu.attributes=Attributes
+
+cloner.tagFilters=Tag Filters
+cloner.tagVisibility=Tag Visibility
+cloner.wandTags=Wand Tags
+cloner.npcTags=NPC Tags
+cloner.selectedTags=Selected Tags
+cloner.order=Sort Order
+cloner.ascending=Ascending
+cloner.descending=Descending
+cloner.type=Sort Type
+cloner.name=Name
+cloner.date=Date
+cloner.wandtagsapplied=Wand Tags will be applied
+
+tags.allTags=All Tags
+tags.selectedTags=Selected Tags
+tags.tags=Tags
+
+global.banks=Banks
+global.transport=Transport
+global.playerdata=PlayerData
+global.recipes=Recipes
+global.naturalspawn=Spawns
+global.linked=Linked
+global.customeffects=Effects
+global.magic=Magic
+global.abilities=Abilities
+global.auction=Auction
+
+bank.slot=Slot
+bank.unlock=Unlock
+bank.upgrade=Upgrade
+bank.upgradeCosts=Costs to upgrade
+bank.unlockCosts=Costs to unlock
+
+follower.waiting=Waiting
+follower.following=Following
+follower.hire=Hire
+follower.health=Health
+follower.daysleft=Days left
+follower.lastday=Last day
+follower.day=Day
+follower.days=Days
+follower.hireText=Thank you for hiring me for
+follower.farewellText=My days with you are over. Farewell
+follower.infiniteDays=Infinite Days
+follower.guiDisabled=GuiDisabled
+follower.allowSoulstone=AllowSoulstone
+
+transporter.travel=Travel
+transporter.unlock=Transport to %s is now unlocked
+transporter.discovered=Available when discovered
+transporter.start=Available from the start
+transporter.interaction=Available after interaction
+
+conversation.delay=Delay
+conversation.line=Line
+
+bard.jukebox=Play as jukebox
+bard.background=Play as background
+bard.ondistance=On Distance
+bard.offdistance=Off Distance
+bard.hasoff=Has Off Distance
+
+dialog.dialog=Dialog
+dialog.dialogs=Dialogs
+dialog.options=Dialog Options
+dialog.dialogtext=Dialog Text
+dialog.editoption=Edit Dialog Option
+dialog.optiontype=Option type
+dialog.selectoption=Select Option
+dialog.quitoption=Quit Option
+dialog.option=Dialog Option
+dialog.roleoption=Role Option
+dialog.commandoption=Command Option
+dialog.commandoptionplayer=Use "@dp" to target the player using this
+dialog.commandmultiple=Use "@x" to split the command to append multiple
+dialog.hideNPC=Hide NPC
+dialog.showWheel=Show Dialog Wheel
+dialog.disableEsc=Disable Esc
+dialog.visualOption=Visual Options
+dialog.darkenScreen=Darken Screen
+dialog.renderType=Render Type
+dialog.instant=Instant
+dialog.gradual=Gradual
+dialog.previousBlocks=Previous Text Blocks
+dialog.textOffset=Text Offset
+dialog.titleOffset=Title Offset
+dialog.optionOffset=Option Offset
+dialog.optionSpacing=Option Spacing
+dialog.textSound=Text Sound
+dialog.textPitch=Text Pitch
+dialog.textureOffset=Texture Offset
+dialog.selectedColor=Selected Color
+dialog.optionLine=Option Line
+dialog.npcScale=NPC Scale
+dialog.npcOffset=NPC Offset
+dialog.titleColor=Title Color
+dialog.titlePos=Title Position
+dialog.enableColorSettings=Enable Color Settings
+
+quest.quest=Quest
+quest.active=Active Quest
+quest.quests=Quests
+quest.item=Item
+quest.kill=Kill
+quest.areakill=AreaKill
+quest.dialog=Dialog
+quest.location=Location
+quest.manual=Manual
+quest.completedtext=Completed text
+quest.questlogtext=Questlog text
+quest.complete=Complete
+quest.reward=Reward
+quest.repeatable=Repeatable
+quest.mcdaily=MC Daily
+quest.mcweekly=MC Weekly
+quest.rldaily=RL Daily
+quest.rlweekly=RL Weekly
+quest.rlcustom=RL Custom
+quest.mccustom=MC Custom
+quest.profile=Profile Options
+quest.instant=Instant Complete
+quest.npc=Complete by npc
+quest.next=Next Quest
+quest.found=Found
+quest.notfound=Not Found
+quest.completed=Quest Complete
+quest.newquest=New Quest
+quest.noquests=You have no active quests
+quest.completewith=Complete with %s
+quest.randomitem=Random Item
+quest.exp=Exp
+quest.takeitems=Take Items
+quest.objectives=Objectives
+quest.track=Track
+quest.tracking=Tracking
+quest.alerts=Alerts
+quest.noAlerts=No Alerts
+
+gui.api=API
+
+script.scripts=Scripts
+script.hooks=Hooks
+script.loadscript=Load Scripts
+script.openfolder=Open scripts folder
+script.init=Init
+script.interact=Interact
+script.update=Update
+script.console=Console
+script.language=Language
+script.default=Default
+script.damaged=Damaged
+script.killed=Killed
+script.attack=Attack
+script.target=Target
+script.timer=Timer
+script.targetLost=Target Lost
+script.projectileTick=Proj. Tick
+script.projectileImpact=Proj. Impact
+script.availableScripts=Available Scripts
+script.loadedScripts=Loaded Scripts
+script.collide=Collide
+script.kills=Kills
+script.dialog_closed=Dialog Closed
+
+eventscript.eventScripts=Event Scripts
+eventscript.playerevent=Player Events
+
+playerscript.disabled=Disabled
+playerscript.attack=Attack
+playerscript.breakBlock=Break
+playerscript.chat=Chat
+playerscript.containerclosed=Closed Container
+playerscript.containerOpen=Open Container
+playerscript.damagedEntity=Damaged Entity
+playerscript.damaged=Hurt
+playerscript.killed=Killed
+playerscript.factionupdate=Faction Updated
+playerscript.init=Init
+playerscript.interact=Interact
+playerscript.keyPressed=Key Pressed
+playerscript.kills=Kills
+playerscript.levelUp=Level Up
+playerscript.login=Login
+playerscript.logout=Logout
+playerscript.pickUp=Pickup
+playerscript.rangedCharge=Arrow Charge
+playerscript.rangedLaunched=Arrow Launched
+playerscript.toss=Toss Item
+playerscript.drop=Drop Items
+playerscript.tick=Update
+playerscript.pickupXP=Pickup XP
+playerscript.timer=Timer
+playerscript.mouseClicked=Mouse Click
+playerscript.startItem=Item Start
+playerscript.usingItem=Using Item
+playerscript.stopItem=Item Stop
+playerscript.finishItem=Item Finish
+playerscript.playSound=Play Sound
+playerscript.lightning=Lightning Struck
+playerscript.fall=Fall
+playerscript.jump=Jump
+playerscript.respawn=Respawn
+playerscript.changedDim=Dimension Change
+playerscript.useHoe=Use Hoe
+playerscript.sleep=Sleep
+playerscript.wakeUp=Wake Up
+playerscript.fillBucket=Fill Bucket
+playerscript.bonemeal=Bonemeal
+playerscript.achievement=Achievement
+
+item.npcWand.name=Npc Wand
+item.npcMobCloner.name=Mob Cloner
+item.npcMovingPath.name=Npc Pather
+item.npcMounter.name=Mounter
+item.npcTeleporter.name=Teleporter
+item.npcScripter.name=Scripter
+item.scripted_item.name=Scripted Item
+item.linked_item.name=Linked Item
+item.npcTool.hammer.name=Npc Hammer
+item.npcTool.paintbrush.name=Npc Brush
+item.npcTool.magic_book.name=Magic Book
+
+
+item.npcBanjo.name=Banjo
+item.npcViolin.name=Violin
+item.npcViolinBow.name=Violin Bow
+item.npcHarp.name=Harp
+item.npcGuitar.name=Guitar
+item.npcFrenchHorn.name=French Horn
+item.npcOcarina.name=Ocarina
+item.npcClarinet.name=Clarinet
+
+item.npcCoinWooden.name=Wooden Coin
+item.npcCoinStone.name=Stone Coin
+item.npcCoinBronze.name=Bronze Coin
+item.npcCoinIron.name=Iron Coin
+item.npcCoinGold.name=Golden Coin
+item.npcCoinDiamond.name=Diamond Coin
+item.npcCoinEmerald.name=Emerald Coin
+
+item.npcWoodenGun.name=Wooden Gun
+item.npcStoneGun.name=Stone Gun
+item.npcIronGun.name=Iron Gun
+item.npcGoldGun.name=Golden Gun
+item.npcDiamondGun.name=Diamond Gun
+item.npcBronzeGun.name=Bronze Gun
+item.npcEmeraldGun.name=Emerald Gun
+item.npcMachineGun.name=Machine Gun
+item.npcMachineGun.info=Remaining
+
+item.npcWoodenBullet.name=Wooden Bullet
+item.npcStoneBullet.name=Stone Bullet
+item.npcIronBullet.name=Iron Bullet
+item.npcGoldenBullet.name=Golden Bullet
+item.npcDiamondBullet.name=Diamond Bullet
+item.npcBronzeBullet.name=Bronze Bullet
+item.npcEmeraldBullet.name=Emerald Bullet
+item.npcBlackBullet.name=Black Bullet
+
+item.npcWoodenTrident.name=Wooden Trident
+item.npcStoneTrident.name=Stone Trident
+item.npcIronTrident.name=Iron Trident
+item.npcGoldTrident.name=Golden Trident
+item.npcDiamondTrident.name=Diamond Trident
+item.npcBronzeTrident.name=Bronze Trident
+item.npcEmeraldTrident.name=Emerald Trident
+item.npcCursedTrident.name=Cursed Trident
+item.npcDemonicTrident.name=Demonic Trident
+item.npcFrostTrident.name=Frost Trident
+item.npcMithrilTrident.name=Mithril Trident
+
+item.npcNatureSpell.name=Nature Spell
+item.npcArcaneSpell.name=Arcane Spell
+item.npcLightningSpell.name=Lightning Spell
+item.npcIceSpell.name=Ice Spell
+item.npcFireSpell.name=Fire Spell
+item.npcDarkSpell.name=Dark Spell
+item.npcHolySpell.name=Holy Spell
+
+item.npcKunai.name=Kunai
+item.npcReverseKunai.name=Reverse Kunai
+item.npcShuriken.name=Shuriken
+item.npcGiantShuriken.name=Giant Shuriken
+item.npcKatana.name=Katana
+item.npcKukri.name=Kukri
+
+item.npcGolfClub.name=Golf Club
+item.npcMagicWand.name=Magic Wand
+item.npcChickenSword.name=Chicken Sword
+item.npcHandCuffs.name=Handcuffs
+item.npcHammer.name=Hammer
+item.npcBaseballBat.name=Baseball Bat
+item.npcLeadPipe.name=Lead Pipe
+item.npcCleaver.name=Cleaver
+item.npcSaber.name=Saber
+item.npcHockeyStick.name=Hockey Stick
+item.npcSledgeHammer.name=Sledgehammer
+item.npcBrokenBottle.name=Broken Bottle
+item.npcCombatKnive.name=Combat Knife
+item.npcLighter.name=Lighter
+item.npcBatton.name=Baton
+item.npcGunChainsaw.name=GunChainsaw
+item.npcRapier.name=Rapier
+item.npcCrowbar.name=Crowbar
+item.npcPipeWrench.name=Pipe Wrench
+item.npcWrench.name=Wrench
+item.npcSwissArmyKnife.name=Swiss Army Knife
+item.npcLeafBlade.name=Leaf Blade
+
+item.npcWoodenShield.name=Round Wooden Shield
+item.npcStoneShield.name=Round Stone Shield
+item.npcIronShield.name=Round Iron Shield
+item.npcGoldenShield.name=Round Golden Shield
+item.npcDiaShield.name=Round Diamond Shield
+item.npcBronzeShield.name=Round Bronze Shield
+item.npcEmeraldShield.name=Round Emerald Shield
+item.npcDemonicShield.name=Demonic Shield
+item.npcFrostShield.name=Frost Shield
+item.npcMithrilShield.name=Mithril Shield
+item.npcFullWoodenShield.name=Wooden Shield
+item.npcFullStoneShield.name=Stone Shield
+item.npcFullIronShield.name=Iron Shield
+item.npcFullGoldenShield.name=Golden Shield
+item.npcFullDiaShield.name=Diamond Shield
+item.npcFullBronzeShield.name=Bronze Shield
+item.npcFullEmeraldShield.name=Emerald Shield
+item.npcFullDemonicShield.name=Demonic Shield
+item.npcFullFrostShield.name=Frost Shield
+item.npcFullMithrilShield.name=Mithril Shield
+
+item.npcTowerShield.name=Steel Tower Shield
+item.npcCryscentShield.name=Steel Cryscent Shield
+item.npcScutumShield.name=Steel Scutum Shield
+item.npcHeaterShield.name=Steel Heater Shield
+
+item.npcWoodenSpear.name=Wooden Spear
+item.npcStoneSpear.name=Stone Spear
+item.npcIronSpear.name=Iron Spear
+item.npcGoldenSpear.name=Golden Spear
+item.npcDiamondSpear.name=Diamond Spear
+item.npcBronzeSpear.name=Bronze Spear
+item.npcEmeraldSpear.name=Emerald Spear
+item.npcDemonicSpear.name=Demonic Spear
+item.npcFrostSpear.name=Frost Spear
+item.npcMithrilSpear.name=Mithril Spear
+
+item.npcWoodenBattleAxe.name=Wooden Battle Axe
+item.npcStoneBattleAxe.name=Stone Battle Axe
+item.npcIronBattleAxe.name=Iron Battle Axe
+item.npcGoldenBattleAxe.name=Golden Battle Axe
+item.npcDiamondBattleAxe.name=Diamond Battle Axe
+item.npcBronzeBattleAxe.name=Bronze Battle Axe
+item.npcEmeraldBattleAxe.name=Emerald Battle Axe
+item.npcDemonicBattleAxe.name=Demonic Battle Axe
+item.npcFrostBattleAxe.name=Frost Battle Axe
+item.npcMithrilBattleAxe.name=Mithril Battle Axe
+
+item.npcWoodenMace.name=Wooden Mace
+item.npcStoneMace.name=Stone Mace
+item.npcIronMace.name=Iron Mace
+item.npcGoldenMace.name=Golden Mace
+item.npcDiamondMace.name=Diamond Mace
+item.npcBronzeMace.name=Bronze Mace
+item.npcEmeraldMace.name=Emerald Mace
+item.npcDemonicMace.name=Demonic Mace
+item.npcFrostMace.name=Frost Mace
+item.npcMithrilMace.name=Mithril Mace
+
+item.npcWoodenDagger.name=Wooden Dagger
+item.npcStoneDagger.name=Stone Dagger
+item.npcIronDagger.name=Iron Dagger
+item.npcGoldenDagger.name=Golden Dagger
+item.npcDiamondDagger.name=Diamond Dagger
+item.npcBronzeDagger.name=Bronze Dagger
+item.npcEmeraldDagger.name=Emerald Dagger
+item.npcDemonicDagger.name=Demonic Dagger
+item.npcFrostDagger.name=Frost Dagger
+item.npcMithrilDagger.name=Mithril Dagger
+item.npcWoodenReversedDagger.name=Reversed Wooden Dagger
+item.npcStoneReversedDagger.name=Reversed Stone Dagger
+item.npcIronReversedDagger.name=Reversed Iron Dagger
+item.npcGoldenReversedDagger.name=Reversed Golden Dagger
+item.npcDiamondReversedDagger.name=Reversed Diamond Dagger
+item.npcBronzeReversedDagger.name=Reversed Bronze Dagger
+item.npcEmeraldReversedDagger.name=Reversed Emerald Dagger
+item.npcDemonicReversedDagger.name=Reversed Demonic Dagger
+item.npcFrostReversedDagger.name=Reversed Frost Dagger
+item.npcMithrilReversedDagger.name=Reversed Mithril Dagger
+
+item.npcWoodenStaff.name=Wooden Staff
+item.npcStoneStaff.name=Stone Staff
+item.npcIronStaff.name=Iron Staff
+item.npcGoldenStaff.name=Golden Staff
+item.npcDiamondStaff.name=Diamond Staff
+item.npcBronzeStaff.name=Bronze Staff
+item.npcEmeraldStaff.name=Emerald Staff
+item.npcElementalStaff.name=Elemental Staff
+item.npcDemonicStaff.name=Demonic Staff
+item.npcFrostStaff.name=Frost Staff
+item.npcMithrilStaff.name=Mithril Staff
+
+item.npcWoodenScythe.name=Wooden Scythe
+item.npcStoneScythe.name=Stone Scythe
+item.npcIronScythe.name=Iron Scythe
+item.npcGoldenScythe.name=Golden Scythe
+item.npcBronzeScythe.name=Bronze Scythe
+item.npcDiamondScythe.name=Diamond Scythe
+item.npcEmeraldScythe.name=Emerald Scythe
+item.npcDemonicScythe.name=Demonic Scythe
+item.npcFrostScythe.name=Frost Scythe
+item.npcMithrilScythe.name=Mithril Scythe
+
+item.npcWoodenGlaive.name=Wooden Glaive
+item.npcStoneGlaive.name=Stone Glaive
+item.npcIronGlaive.name=Iron Glaive
+item.npcGoldenGlaive.name=Golden Glaive
+item.npcDiamondGlaive.name=Diamond Glaive
+item.npcBronzeGlaive.name=Bronze Glaive
+item.npcEmeraldGlaive.name=Emerald Glaive
+item.npcDemonicGlaive.name=Demonic Glaive
+item.npcFrostGlaive.name=Frost Glaive
+item.npcMithrilGlaive.name=Mithril Glaive
+
+item.npcCowleatherHead.name=Cowleather Helmet
+item.npcCowleatherChest.name=Cowleather ChestPlate
+item.npcCowleatherLegs.name=Cowleather Leggings
+item.npcCowleatherBoots.name=Cowleather Boots
+
+item.npcNanorumHead.name=Nanorum Helmet
+item.npcNanorumChest.name=Nanorum ChestPlate
+item.npcNanorumLegs.name=Nanorum Leggings
+item.npcNanorumBoots.name=Nanorum Boots
+
+item.npcTacticalHead.name=Tactical Helmet
+item.npcTacticalChest.name=Tactical Vest
+
+item.npcFullLeatherHead.name=Full Leather Helmet
+item.npcFullLeatherChest.name=Full Leather ChestPlate
+
+item.npcFullIronHead.name=Full Iron Helmet
+item.npcFullIronChest.name=Full Iron ChestPlate
+
+item.npcFullGoldHead.name=Full Gold Helmet
+item.npcFullGoldChest.name=Full Gold ChestPlate
+
+item.npcFullDiamondHead.name=Full Diamond Helmet
+item.npcFullDiamondChest.name=Full Diamond ChestPlate
+
+item.npcFullBronzeHead.name=Full Bronze Helmet
+item.npcFullBronzeChest.name=Full Bronze ChestPlate
+item.npcFullBronzeLeggings.name=Full Bronze Leggings
+item.npcFullBronzeBoots.name=Full Bronze Boots
+
+item.npcFullWoodenHead.name=Full Wooden Helmet
+item.npcFullWoodenChest.name=Full Wooden ChestPlate
+item.npcFullWoodenLeggings.name=Full Wooden Leggings
+item.npcFullWoodenBoots.name=Full Wooden Boots
+
+item.npcTuxedoChest.name=Tuxedo Chest
+item.npcTuxedoPants.name=Tuxedo Pants
+item.npcTuxedoBottom.name=Tuxedo Trenchcoat
+
+item.npcWizardHead.name=Wizard Head
+item.npcWizardChest.name=Wizard Chest
+item.npcWizardPants.name=Wizard Leggings
+
+item.npcAssassinHead.name=Assassins Helmet
+item.npcAssassinChest.name=Assassins ChestPlate
+item.npcAssassinLeggings.name=Assassins Leggings
+item.npcAssassinBoots.name=Assassins Boots
+
+item.npcSoldierHead.name=Soldier Helmet
+item.npcSoldierChest.name=Soldier ChestPlate
+item.npcSoldierLegs.name=Soldier Leggings
+item.npcSoldierBottom.name=Soldier Trenchcoat
+
+item.npcX407Head.name=X407 Prototype Helmet
+item.npcX407Chest.name=X407 Prototype ChestPlate
+item.npcX407Legs.name=X407 Prototype Leggings
+item.npcX407Boots.name=X407 Prototype Boots
+
+item.npcMithrilHead.name=Mithril Helmet
+item.npcMithrilChest.name=Mithril ChestPlate
+item.npcMithrilLegs.name=Mithril Leggings
+item.npcMithrilBoots.name=Mithril Boots
+
+item.npcDemonicHead.name=Demonic Helmet
+item.npcDemonicChest.name=Demonic ChestPlate
+item.npcDemonicLegs.name=Demonic Leggings
+item.npcDemonicBoots.name=Demonic Boots
+
+item.npcCommissarHead.name=Commissar Helmet
+item.npcCommissarChest.name=Commissar ChestPlate
+item.npcCommissarLegs.name=Commissar Leggings
+item.npcCommissarBottom.name=Commissar Trenchcoat
+
+item.npcInfantryHelmet.name=Infantry Helmet
+item.npcOfficerChest.name=Officer ChestPlate
+
+item.npcCrown.name=Crown
+item.npcCrown2.name=Crown
+item.npcPaperCrown.name=Paper Crown
+
+item.npcNinjaHead.name=Ninja Head
+item.npcNinjaChest.name=Ninja Chest
+item.npcNinjaPants.name=Ninja Leggings
+
+item.npcFullEmeraldHead.name=Full Emerald Helmet
+item.npcFullEmeraldChest.name=Full Emerald ChestPlate
+item.npcFullEmeraldLeggings.name=Full Emerald Leggings
+item.npcFullEmeraldBoots.name=Full Emerald Boots
+
+item.npcOrb.name=Orb
+item.npcBrokenOrb.name=BrokenOrb
+item.npcMana.name=Mana
+
+item.npcNinjaClaw.name=Ninja Claw
+item.npcSteelClaw.name=Steel Claw
+item.npcBearClaw.name=Bear Claw
+item.npcKatar.name=Katar
+
+item.npcLetter.name=Letter
+item.npcPlans.name=Plans
+item.npcSatchel.name=Satchel
+item.npcBag.name=Bag
+item.npcCrystal.name=Crystal
+item.npcSeveredEar.name=Severed Ear
+item.npcPhone.name=Phone
+item.npcBanditMask.name=Bandit Mask
+item.npcBrokenArrow.name=Broken Arrow
+item.npcEarthElement.name=Earth Element
+item.npcWaterElement.name=Water Element
+item.npcFireElement.name=Fire Element
+item.npcAirElement.name=Air Element
+item.npcCarKey.name=Car Key
+item.npcKey.name=Key
+item.npcKey2.name=Key
+item.npcPendant.name=Pendant
+item.npcBlueprint.name=Blueprint
+item.npcRing.name=Ring
+
+item.npcSkull.name=Skull
+item.npcSaphire.name=Sapphire
+item.npcAmethyst.name=Amethyst
+item.npcRuby.name=Ruby
+item.npcBronzeIngot.name=Bronze Ingot
+item.npcDemonicIngot.name=Demonic Ingot
+item.npcMithrilIngot.name=Mithril Ingot
+
+item.npcMacuahuitl.name=Macuahuitl
+item.npcBoStaff.name=Bo Staff
+item.npcSaiBlade.name=Sai Blade
+item.npcCrossbow.name=Crossbow
+item.npcCrossBolt.name=Crossbow Bolt
+item.npcSlingshot.name=Slingshot
+item.npcMusket.name=Musket
+item.npcExcalibur.name=Excalibur
+
+item.npcBronzeSword.name=Bronze Sword
+item.npcEmeraldSword.name=Emerald Sword
+item.npcDemonicSword.name=Demonic Sword
+item.npcFrostSword.name=Frost Sword
+item.npcMithrilSword.name=Mithril Sword
+
+item.npcAncientCoin.name=Ancient Coin
+item.npcAncientScroll.name=Ancient Scroll
+item.npcArtifact.name=Artifact
+item.npcLocket.name=Locket
+item.npcSilk.name=Silk
+item.npcStatuette.name=Statuette
+item.npcTablet.name=Tablet
+
+item.npcWoodenHalberd.name=Wooden Halberd
+item.npcStoneHalberd.name=Stone Halberd
+item.npcIronHalberd.name=Iron Halberd
+item.npcGoldenHalberd.name=Golden Halberd
+item.npcDiamondHalberd.name=Diamond Halberd
+item.npcBronzeHalberd.name=Bronze Halberd
+item.npcEmeraldHalberd.name=Emerald Halberd
+item.npcCursedHalberd.name=Cursed Halberd
+item.npcDemonicHalberd.name=Demonic Halberd
+item.npcFrostHalberd.name=Frost Halberd
+item.npcMithrilHalberd.name=Mithril Halberd
+
+item.npcWoodenWarhammer.name=Wooden Warhammer
+item.npcStoneWarhammer.name=Stone Warhammer
+item.npcIronWarhammer.name=Iron Warhammer
+item.npcGoldenWarhammer.name=Golden Warhammer
+item.npcDiamondWarhammer.name=Diamond Warhammer
+item.npcBronzeWarhammer.name=Bronze Warhammer
+item.npcEmeraldWarhammer.name=Emerald Warhammer
+item.npcCursedWarhammer.name=Cursed Warhammer
+item.npcDemonicWarhammer.name=Demonic Warhammer
+item.npcFrostWarhammer.name=Frost Warhammer
+item.npcMithrilWarhammer.name=Mithril Warhammer
+
+item.npcChainSkirt.name=Chain Skirt
+item.npcLeatherSkirt.name=Leather Skirt
+item.npcGoldSkirt.name=Golden Skirt
+item.npcIronSkirt.name=Iron Skirt
+item.npcDiamondSkirt.name=Diamond Skirt
+item.npcEmeraldSkirt.name=Emerald Skirt
+item.npcBronzeSkirt.name=Bronze Skirt
+item.npcDemonicSkirt.name=Demonic Skirt
+item.npcMithrilSkirt.name=Mithril Skirt
+
+item.npcWoodenBroadsword.name=Wooden Broadsword
+item.npcStoneBroadsword.name=Stone Broadsword
+item.npcIronBroadsword.name=Iron Broadsword
+item.npcGoldenBroadsword.name=Golden Broadsword
+item.npcDiamondBroadsword.name=Diamond Broadsword
+item.npcBronzeBroadsword.name=Bronze Broadsword
+item.npcEmeraldBroadsword.name=Emerald Broadsword
+item.npcCursedBroadsword.name=Cursed Broadsword
+item.npcDemonicBroadsword.name=Demonic Broadsword
+item.npcFrostBroadsword.name=Frost Broadsword
+item.npcMithrilBroadsword.name=Mithril Broadsword
+
+item.npcSoulstoneEmpty.name=Soulstone Empty
+item.npcSoulstoneFilled.name=Soulstone Filled
+
+item.npcHeart.name=Heart
+item.npcMoney.name=Money
+item.npcNecklace.name=Necklace
+item.npcUsbStick.name=USB-Stick
+
+enchantment.damage=Damage
+enchantment.confusion=Confusion
+enchantment.infinite=Infinite
+enchantment.poison=Poison
+
+movement.name=Movement
+movement.type=Moving type
+movement.wanderinteract=Interact with npcs
+movement.sitting=Sitting
+movement.lying=Lying
+movement.sneaking=Sneaking
+movement.dancing=Dancing
+movement.aiming=Aiming
+movement.animation=Animation
+movement.rotation=Rotation
+movement.body=Body
+movement.manual=Manual
+movement.stalking=Stalking
+movement.head=Head
+movement.pauses=Pauses
+movement.stopinteract=Stop on interact
+movement.crawling=Crawling
+movement.hug=Hugging
+
+model.head=Head
+model.rarm=R. Arm
+model.larm=L. Arm
+model.arms=Arms
+model.body=Body
+model.lleg=L. Leg
+model.rleg=R. Leg
+model.legs=Legs
+model.scale=Scale
+model.animation=Animation
+model.rotate=Rotate
+model.rotationRate=Rotation Rate
+model.translate=Translate
+model.pivot=Pivot
+model.load=Model Load
+model.save=Model Save
+model.sliders=Sliders
+model.manual=Manual
+
+puppet.standing=While standing
+puppet.walking=While walking
+puppet.attacking=While attacking
+puppet.animate=Animate
+puppet.animSpeed=Animation Speed
+puppet.pivotX=Pivot X
+puppet.pivotY=Pivot Y
+puppet.pivotZ=Pivot Z
+puppet.fullAngles=Full Angles
+
+animation.animation=Animation
+animation.frame=Frame
+animation.frames=Frames
+animation.framePart=Frame Part
+animation.smoothing=Smoothing
+animation.linear=Linear
+animation.smooth=Smooth
+animation.loop=Loop
+animation.tickType=Tick Type
+animation.mcTicks=MC Ticks
+animation.renderTicks=Render Ticks
+animation.whileStanding=While Standing
+animation.whileAttacking=While Attacking
+animation.whileMoving=While Moving
+animation.duration=Duration
+animation.customized=Customized
+animation.rotations=Rotations
+animation.pivots=Pivots
+animation.addFrame=Add a frame to continue!
+animation.playing=Playing
+animation.paused=Paused
+animation.stopped=Stopped
+animation.animationOptions=Animation Options
+animation.frameOptions=Frame Options
+
+guard.creepers=Attack Creepers
+guard.animals=Attack Animals
+guard.mobs=Attack Monsters
+guard.currentTargets=Current Targets
+guard.availableTargets=Available Targets
+guard.specifictargets=Specific targets
+
+companion.baby=Baby
+companion.child=Child
+companion.teenager=Teenager
+companion.adult=Adult
+companion.fullgrown=Full-Grown
+companion.age=Age
+companion.stage=Stage
+companion.owner=Owner
+companion.strength=Strength
+companion.talent=Talent
+companion.level=Level
+
+markov.generic.name=Generic Generator
+markov.ancientGreek.name=Ancient Greek
+markov.aztec.name=Aztec
+markov.classicCNPCs.name=Classic CNPCs
+markov.japanese.name=Japanese
+markov.oldNorse.name=Old Norse
+markov.roman.name=Roman (Latin)
+markov.sami.name=Lappish (Sami)
+markov.slavic.name=Old Polish
+markov.welsh.name=Breton (Welsh)
+markov.spanish.name=Spanish (Latino)
+
+markov.gender.name=Gender
+markov.gender.either=Either
+markov.gender.female=Female
+markov.gender.male=Male
+markov.generate=Generate
+
+mark.question=Question
+mark.exclamation=Exclamation
+mark.pointer=Pointer
+mark.skull=Skull
+mark.cross=Cross
+mark.star=Star
+
+tint.enable=Enable Custom Tint
+tint.enablegeneral=Enable General Tint
+tint.enablehurt=Enable Hurt Tint
+tint.tint=General Tint
+tint.alpha=Alpha
+tint.hurt=Hurt Tint
+
+hitbox.hitbox=Hitbox
+hitbox.width=Width Scale
+hitbox.height=Height Scale
+
+texture.item=Item
+texture.base=Base
+
+general.menuName=Menu Name
+
+effect.runsEveryX=Runs every X tick
+effect.defaultLength=Default length
+
+effect.editor.runsEveryX=Every X tick
+effect.editor.defaultLength=Length
+effect.editor.height=Height
+effect.editor.width=Width
+effect.editor.xPos=X Pos
+effect.editor.yPos=Y Pos
+effect.editor.lossOnDeath=Loss on Death
+
+particle.maxAge=Max Age
+particle.facePlayer=Face Player
+particle.noClip=No Clip
+
+profile.lastLoaded=Last Loaded
+profile.info.quest.active=Quests Active
+profile.info.quest.finished=Quests Finished
+profile.info.dialog.read=Dialogs Read
+profile.change.message=Do you want to change?
+profile.create.message=Creating a new profile will change you to it.
+profile.rename.message=Do you want to rename your slot?
+profile.operation.error=There was an error in your request
+profile.enableOptions=Enable Options
+profile.completion=Completion
+profile.cooldown=Cooldown
+profile.individual=Individual
+profile.slot=Slot
+
+magic.interaction=Interaction
+magic.diagram=Diagram Type
+magic.index=Index
+magic.priority=Priority
+magic.split=Split
+magic.bonus=Bonus
+magic.dist=Dist
+magic.distribute=Distribute
+magic.distInfo=Distributes Magic Split through all selected Magic
+
+diagram.circular=Circular
+diagram.square=Square
+diagram.tree=Tree
+diagram.generated=Generated
+diagram.circular_manual=Circular [Manual]
+diagram.square_manual=Square [Manual]
+diagram.tree_manual=Tree [Manual]
+diagram.chart=Chart
+diagram.manual=Manual
+diagram.info=Manual: Index is the level, Priority is the order.
+
+rpgcore:tooltip=Hold %key% to view attributes
+rpgcore:attribute.damage=Damage
+rpgcore:attribute.defense=Defense
+rpgcore:attribute.resistance=Resistance
+rpgcore:attribute.neutral=Neutral Damage
+
+requirement.soulbind=Soulbind
+
+trail.smoke=Smoke
+trail.portal=Portal
+trail.redstone=Redstone
+trail.lightning=Lightning
+trail.largesmoke=Large Smoke
+trail.magic=Magic
+trail.enchant=Enchant
+trail.crit=Critical
+trail.explode=Explode
+trail.music=Music
+trail.flame=Flame
+trail.lava=Lava
+trail.splash=Splash
+trail.slime=Slime
+trail.heart=Heart
+trail.angryvillager=AngryVillager
+trail.happyvillager=HappyVillager
+trail.custom=Custom
+
+menu.abilities=Abilities
+
+ability.availableTypes=Available Types
+ability.npcAbilities=NPC Abilities
+ability.globalCooldown=Global Cooldown
+ability.minCooldown=Min CD
+ability.maxCooldown=Max CD
+ability.edit=Edit Ability
+ability.targeting=Targeting
+ability.timing=Timing (ticks)
+ability.cooldown=Cooldown
+ability.windup=Wind Up
+ability.syncOn=Sync: On
+ability.syncOff=Sync: Off
+ability.dazed=Dazed Ticks
+ability.threshold=Threshold
+ability.lockMove=Lock Move
+ability.lockMove.windup=Windup
+ability.lockMove.active=Active
+ability.lockMove.both=Both
+ability.telegraph=Telegraph
+ability.telegraphType=Telegraph Type
+
+ability.target.aggro_target=Target
+ability.target.self=Self
+ability.target.aoe_self=AOE Self
+ability.target.aoe_target=AOE Target
+ability.syncWindup=Sync Windup
+
+# Anchor Point
+ability.anchor.front=Front
+ability.anchor.center=Center
+ability.anchor.rightHand=Right Hand
+ability.anchor.leftHand=Left Hand
+ability.anchor.aboveHead=Above Head
+ability.anchor.chest=Chest
+ability.anchor.eye=Eye
+
+# Sweep Mode
+ability.sweep.swipe=Swipe
+ability.sweep.spin=Spin
+
+# Dash Mode
+ability.dash.aggressive=Aggressive
+ability.dash.defensive=Defensive
+ability.dash.directional=Directional
+
+# Dash Direction
+ability.dash.forward=Forward
+ability.dash.diagonalForwardLeft=Diagonal Forward Left
+ability.dash.diagonalForwardRight=Diagonal Forward Right
+ability.dash.left=Left
+ability.dash.right=Right
+ability.dash.diagonalBackLeft=Diagonal Back Left
+ability.dash.diagonalBackRight=Diagonal Back Right
+ability.dash.back=Back
+ability.dash.custom=Custom
+
+# Counter Type
+ability.counter.flat=Flat
+ability.counter.percent=Percent
+
+# Zone Shape
+ability.shape.circle=Circle
+ability.shape.square=Square
+ability.shape.ring=Ring
+ability.shape.cone=Cone
+ability.zoneShape=Shape
+
+# Zone Presets
+ability.preset.custom=Custom
+ability.preset.default=Default
+ability.preset.toxic=Toxic
+ability.preset.inferno=Inferno
+ability.preset.arcane=Arcane
+ability.preset.electric=Electric
+ability.preset.frost=Frost
+ability.preset.hidden=Hidden
+ability.preset.venom=Venom
+ability.preset.explosive=Explosive
+ability.preset.cursed=Cursed
+ability.preset.shock=Shock
+ability.preset.snare=Snare
+
+# Accent Styles
+ability.accentStyle.static=Static
+ability.accentStyle.swaying=Swaying
+ability.accentStyle.flickering=Flickering
+
+# Particle Motion Styles
+ability.particleMotion.rising=Rising
+ability.particleMotion.drifting=Drifting
+ability.particleMotion.sparks=Sparks
+
+# Zone Settings
+ability.section.zone=Zone Placement
+ability.telegraphSize=Telegraph Size
+ability.coneAngle=Cone Angle
+ability.ignoreIFrames=Ignore I-Frames
+ability.visible=Visible
+
+# Visual Layer Section Headers
+ability.section.ground=Ground Fill
+ability.section.rings=Rings
+ability.section.border=Border
+ability.section.accents=Accents
+ability.section.lightning=Lightning
+ability.section.particles=Particles
+
+# Placement Mode
+ability.placement.atCaster=At Caster
+ability.placement.atTarget=At Target
+ability.placement.followCaster=Follow Caster
+ability.placement.followTarget=Follow Target
+
+# Teleport Mode
+ability.teleport.blink=Blink
+ability.teleport.behind=Behind
+ability.teleport.single=Single
+
+# Trap Placement
+ability.trapPlace.atCaster=At Caster
+ability.trapPlace.atTarget=At Target
+ability.trapPlace.aheadOfCaster=Ahead of Caster
+
+telegraph.circle=Circle
+telegraph.ring=Ring
+telegraph.line=Line
+telegraph.cone=Cone
+telegraph.point=Point
+telegraph.square=Square
+telegraph.none=None
+
+ability.tab.timing=Timing
+ability.tab.effects=Effects
+ability.tab.telegraph=Telegraph
+ability.tab.visual=Visual
+ability.telegraphColor=Color
+ability.telegraphSizeNote=Size is based on ability parameters
+
+# Ability Effects Tab
+
+ability.cnpc.custom=Custom
+ability.telegraphShape=Telegraph Shape
+ability.toggleEnabled=Toggle
+ability.toggleStates=Toggle States
+ability.hasActiveToggle=Active Toggle Tick
+ability.section.toggle=Toggle
+ability.section.execution=Execution
+ability.cnpc.slam=Slam
+ability.cnpc.heavy_hit=Heavy Hit
+ability.cnpc.cutter=Cutter
+ability.cnpc.beam=Beam
+ability.cnpc.projectile=Projectile
+ability.cnpc.orb=Orb
+ability.cnpc.charge=Charge
+ability.cnpc.dash=Dash
+ability.cnpc.teleport=Teleport
+ability.cnpc.vortex=Vortex
+ability.cnpc.shockwave=Shockwave
+ability.cnpc.guard=Guard
+ability.cnpc.counter=Counter
+ability.cnpc.dodge=Dodge
+ability.cnpc.effect=Effect
+ability.cnpc.hazard=Hazard
+ability.cnpc.trap=Trap
+ability.cnpc.disc=Disc
+ability.cnpc.laser_shot=Laser
+ability.cnpc.sweeper=Sweeper
+
+# ═══════════════════════════════════════════════════════════════
+# Ability Config GUI
+# ═══════════════════════════════════════════════════════════════
+
+# General Tab
+ability.weight=Weight
+ability.windUpTicks=Wind Up
+ability.cooldownTicks=Cooldown
+ability.perAbilityCooldown=Per-Ability
+ability.freeOnCast=Free on Cast
+ability.hover.freeOnCast=Ability enters cooldown immediately after entities are spawned, allowing the caster to use other abilities while summoned entities remain active
+ability.freeAim=Free Aim
+ability.hover.freeAim=Players Only. Allows the player to steer the beam direction with their mouse during the active phase. Requires: Lock Movement set to Active or Both, Rotation Mode set to Free, Free on Cast disabled.
+ability.lockMovement=Lock Movement
+ability.rotationMode=Rotation
+ability.rotationPhase=Phase
+ability.rotation.free=Free
+ability.rotation.locked=Locked
+ability.rotation.track=Track
+ability.interruptible=Interruptible
+ability.dazedTicks=Dazed Ticks
+ability.targetingMode=Targeting
+
+# Target Tab
+ability.minRange=Min Range
+ability.maxRange=Max Range
+ability.conditions=Conditions
+
+# Chained Ability
+ability.select=Select Ability
+ability.entries=Entries
+ability.delay=Delay
+ability.windUpAll=Wind Up All
+ability.allowedBy=Allowed By
+
+# Effects Tab
+ability.windUpSound=Wind Up Sound
+ability.activeSound=Active Sound
+ability.counterSound=Counter Sound
+ability.windUpAnimation=Wind Up Animation
+ability.activeAnimation=Active Animation
+ability.dazedAnimation=Dazed Animation
+ability.counterAnimation=Counter Animation
+ability.dodgeAnimation1=Dodge Animation 1
+ability.dodgeAnimation2=Dodge Animation 2
+ability.dodgeAnimation3=Dodge Animation 3
+ability.showTelegraph=Show Telegraph
+ability.windUpColor=Wind Up Color
+ability.activeColor=Active Color
+ability.telegraphHeight=Height Offset
+ability.telegraphRadius=Radius
+ability.telegraphInnerRadius=Inner Radius
+ability.telegraphLength=Length
+ability.telegraphWidth=Width
+ability.telegraphAngle=Angle
+ability.telegraphActiveTicks=Active Ticks
+ability.syncTelegraph=Sync Duration
+
+# Section Headers
+ability.section.timing=Timing
+ability.section.movement=Movement
+ability.section.sounds=Sounds
+ability.section.animations=Animations
+ability.section.animation=Animation
+ability.section.telegraph=Telegraph
+ability.section.beam=Beam
+ability.section.sweep=Sweep
+ability.section.push=Push
+ability.section.leap=Leap
+ability.section.disc=Disc
+ability.section.homing=Homing
+ability.section.boomerang=Boomerang
+ability.section.explosive=Explosive
+ability.section.colors=Colors
+ability.section.effects=Effects
+ability.section.burst=Burst
+ability.section.magic=Magic
+ability.magic.note=Magic Note
+ability.magic.usesCaster=Uses the Caster's Magic Data
+ability.magic.editor=Magic Editor
+ability.preview.damage=Damage
+ability.preview.health=Health
+ability.preview.magic.casters=Magic: Caster's
+ability.section.dodgeAnimations=Dodge Animations
+ability.section.visual=Visual
+ability.section.projectile1=Projectile 1
+ability.section.projectile2=Projectile 2
+ability.section.projectile3=Projectile 3
+ability.section.projectile4=Projectile 4
+ability.section.projectile5=Projectile 5
+ability.section.projectile6=Projectile 6
+ability.section.projectile7=Projectile 7
+ability.section.projectile8=Projectile 8
+ability.section.counter=Counter
+ability.section.area=Area
+ability.section.damage=Damage
+ability.section.debuffs=Debuffs
+ability.section.healing=Healing
+ability.section.trigger=Trigger
+ability.section.aoe=AOE
+ability.section.pullDamage=Pull Damage
+ability.section.hitZone=Hit Zone
+
+# Shared Sub-Section Labels (used under section headers)
+gui.radius=Radius
+gui.thickness=Thickness
+gui.rotationSpeed=Rotation Speed
+gui.strength=Strength
+gui.delay=Delay
+gui.density=Density
+gui.length=Length
+gui.width=Width
+gui.height=Height
+gui.value=Value
+gui.chance=Chance
+gui.sound=Sound
+gui.animation=Animation
+gui.duration=Duration
+gui.amp=Amp
+gui.speed=Speed
+gui.size=Size
+gui.alpha=Alpha
+gui.count=Count
+gui.style=Style
+gui.scale=Scale
+gui.motion=Motion
+gui.glow=Glow
+gui.texture=Texture
+gui.dps=DPS
+gui.interval=Interval
+gui.cooldown=Cooldown
+gui.max=Max
+gui.preset=Preset
+gui.applyPreset=Apply Preset
+
+# Common Type Settings
+ability.radius=Radius
+ability.knockback=Knockback
+ability.knockbackUp=Knockback Up
+ability.hitType=Hit Type
+ability.hitType.single=Single
+ability.hitType.pierce=Pierce
+ability.hitType.multi=Multi
+ability.multiHitDelay=Multi-Hit Delay
+ability.maxHits=Max Hits
+ability.distance=Distance
+ability.maxDistance=Max Distance
+ability.maxLength=Max Length
+ability.lifetime=Lifetime
+ability.stunTicks=Stun Ticks
+ability.hitWidth=Hit Width
+ability.hitLength=Hit Length
+ability.effects=Effects
+ability.effect.burn=Burn
+ability.mode=Mode
+ability.anchorPoint=Anchor Point
+ability.anchor.offsetX=Offset X
+ability.anchor.offsetY=Offset Y
+ability.anchor.offsetZ=Offset Z
+ability.launchFromAnchor=Launch From Anchor
+ability.hover.launchFromAnchor=When enabled, the projectile launches from its anchor position instead of snapping to the default eye/look-vector position.
+ability.vertical=Vertical
+ability.rotationSpeed=Rotation Speed
+
+# Slam
+ability.leapSpeed=Leap Speed
+ability.leapHeight=Leap Height
+
+# Cutter
+ability.range=Range
+ability.sweepMode=Sweep Mode
+ability.spinDuration=Spin Duration
+ability.arcAngle=Arc Angle
+ability.innerRadius=Inner Radius
+
+# Projectile
+ability.projectileType=Projectile Type
+
+# Heavy Hit
+ability.hitDelayTicks=Hit Delay
+ability.activeDisplayTicks=End Delay
+
+# Orb Settings
+ability.homing=Homing
+ability.explosive=Explosive
+ability.firingSpeed=Firing Speed
+ability.amount=Amount
+ability.dualCharge=Dual Charging
+
+# Charge
+ability.chargeSpeed=Charge Speed
+
+# Dash
+ability.dashMode=Dash Mode
+ability.dashDistance=Distance
+ability.dashDirection=Direction
+ability.dashSpeed=Speed
+ability.dashAngle=Angle
+
+# Teleport
+ability.blinkRadius=Blink Radius
+ability.blinkCount=Blink Count
+ability.blinkDelay=Blink Delay
+ability.behindDistance=Behind Distance
+ability.lineOfSight=Line of Sight
+ability.damageAtStart=Damage At Start
+ability.damageAtEnd=Damage At End
+
+# Vortex
+ability.pullRadius=Pull Radius
+ability.pullStrength=Pull Strength
+ability.maxTargets=Max Targets
+
+# Shockwave
+ability.pushStrength=Push Strength
+
+# Defend (Guard / Counter / Dodge)
+ability.maxHitAmount=Max Hit Amount
+ability.damageReduction=Damage Reduction
+
+# Effect
+ability.instantHeal=Instant
+ability.healAmount=Heal Amount
+ability.healPercent=Heal Percent
+ability.targetFilter=Target Filter
+ability.targetFilter.allies=Allies
+ability.targetFilter.enemies=Enemies
+ability.targetFilter.all=All
+ability.includeSelf=Include Self
+ability.section.targeting=Targeting
+ability.concurrent=Concurrent
+ability.customScriptInfo=This ability is for scripting purposes
+ability.concurrentInfo=This ability allows Concurrency in Chains
+ability.hover.concurrent=When enabled, this ability fires at the same time as the ability above it in the chain
+ability.customEffects=Custom Effects
+ability.effectActions=Effect Actions
+ability.noCustomEffects=No custom effects defined
+ability.variant.selfHeal=Self Heal
+ability.variant.healingAura=Healing Aura
+ability.variant.poisonDebuff=Poison Debuff
+
+# Hazard
+ability.shape=Shape
+ability.placement=Placement
+ability.damageInterval=Damage Interval
+ability.slownessLevel=Slowness Level
+ability.debuffDuration=Debuff Duration
+ability.poisonLevel=Poison Level
+ability.affectsCaster=Affects Caster
+
+# Trap
+ability.armTime=Arm Time
+
+# Sweeper
+ability.sweepSpeed=Sweep Speed
+ability.rotations=Rotations
+ability.piercing=Piercing
+ability.lockTarget=Lock Target
+
+# Beam / Laser
+ability.beamWidth=Beam Width
+ability.headSize=Head Size
+ability.attachedToOwner=Attached to Owner
+ability.laserWidth=Laser Width
+ability.expansionSpeed=Expansion Speed
+ability.lingerTicks=Linger Ticks
+
+# Visual Settings
+ability.innerColor=Inner Color
+ability.outerColor=Outer Color
+ability.outerEnabled=Outer Glow
+ability.outerWidth=Outer Width
+ability.outerAlpha=Outer Alpha
+ability.lightning=Lightning
+ability.lightningRadius=Radius
+
+# Projectile Count / Settings
+ability.projectileCount=Count
+ability.fireDelay=Fire Delay
+ability.colorOverride=Color Override
+
+# Burst System
+ability.burstEnabled=Burst
+ability.burstAmount=Amount
+ability.burstDelay=Delay
+ability.burstReplayAnimations=Replay Animations
+ability.burstOverlap=Overlap
+ability.hover.burstOverlap=When enabled, projectiles from previous bursts keep flying while new ones fire
+ability.hover.burstReplay=Replay windup and active animations for each burst iteration
+
+# Ability Save/Load
+ability.save.confirm=Save ability preset
+ability.save.overwrite=Overwrite existing preset
+ability.duplicate.name=A preset with this name already exists
+ability.invulnerable=Invulnerable
+ability.invulnerable.none=None
+ability.invulnerable.windup=Windup
+ability.invulnerable.active=Active
+ability.invulnerable.both=Both
+ability.hover.invulnerable=Ignores all incoming damage and hit reactions during selected phases. Windup/Both also disable interrupts.
+ability.load.select=Select ability to load:
+ability.load.mode=How should this ability be loaded?
+ability.clone=Clone
+ability.reference=Reference
+ability.delete.confirm=Delete ability preset
+gui.load=Load
+
+# Ability Edit Mode
+ability.edit.mode=How should this ability be edited?
+ability.cloneModify=Clone & Edit
+ability.modifyParent=Edit Parent
+
+# Ability Variant Selection
+ability.selectVariant=Select Variant
+ability.variant.base=Base
+ability.variant.single=Single
+ability.variant.dual=Dual
+ability.variant.barrage=Barrage
+
+# Ability Type Selection
+ability.selectType=Select Ability Type:
+
+# Global Abilities Manager
+ability.manager.title=Ability Manager
+
+# Explosive Hover Text
+ability.explosive.noBlockDamage=Explosions do not destroy blocks
+
+# Shockwave Settings (dev)
+ability.shockwaveFalloff=Damage/knockback drop off with distance
+
+# Ability Config GUI (dev)
+ability.typeId=Type ID
+ability.noTypeSettings=No type-specific settings
+
+# ═══════════════════════════════════════════════════════════════
+# Ability Hover Tooltips
+# ═══════════════════════════════════════════════════════════════
+
+ability.hover.weight=Higher weight = more likely to be chosen when multiple abilities available
+ability.hover.lockMovement=Prevents NPC pathfinding during the selected phases (Windup, Active, or Both)
+ability.hover.rotationMode=Free: normal AI rotation. Locked: freeze facing direction. Track: force face target for precise aiming.
+ability.hover.rotationPhase=When the rotation mode applies (Windup, Active, or Both)
+ability.trackSpeed=Track Speed
+ability.hover.trackSpeed=Tracking speed in blocks/sec. 0 = instant. Sprint speed is ~5.6. Default 4 for lasers (dodgeable while sprinting).
+ability.hover.interruptible=If enabled, ability can be interrupted by taking damage
+ability.hover.ignoreIFrames=Temporarily clears target hurt resistance before applying ability damage, then restores it.
+ability.hover.dazed=Stun duration in ticks if ability is interrupted (20 ticks = 1 second)
+ability.hover.windup=Charge-up time before ability activates (20 ticks = 1 second)
+ability.hover.cooldown=Time before ability can be used again (20 ticks = 1 second)
+ability.hover.sync=Set windup ticks to match animation duration
+ability.hover.minRange=Target must be at least this far away
+ability.hover.maxRange=Target must be within this distance
+ability.hover.targeting=How the ability selects its target
+ability.hover.conditions=Requirements that must be met for ability to activate
+ability.hover.showTelegraph=Show visual warning indicator during windup
+ability.hover.windUpColor=Color of telegraph during charge-up phase
+ability.hover.activeColor=Color of telegraph when ability is active
+ability.hover.homing=Projectile tracks toward target
+ability.hover.homingStr=How aggressively the projectile tracks (higher = tighter turns)
+ability.hover.hitType=Single: stops on first hit. Pierce: can hit each entity once. Multi: can re-hit entities using the delay below. Pierce/Multi both respect Max Hits.
+ability.hover.multiHitDelay=Ticks between repeat hits on the same entity when Hit Type is Multi (20 ticks = 1 second)
+ability.hover.maxHits=Maximum total hits before projectile ends in Pierce/Multi modes. Lower values reduce repeated hit spam and improve performance.
+ability.hover.explosive=Creates explosion on impact
+ability.hover.explosionRad=Size of explosion radius
+ability.hover.maxHitAmount=Maximum hits absorbed before defend ability ends (0 = unlimited)
+ability.hover.counterType=Flat: fixed damage counter-attack. Percent: counter-attack deals a percentage of the absorbed damage.
+ability.hover.piercing=Hits multiple targets instead of stopping on first hit
+ability.hover.lightning=Add electrical effect to visuals
+ability.hover.outerGlow=Enable outer glow layer around projectile
+ability.hover.anchorPoint=Where on the NPC the ability spawns from
+ability.hover.vertical=Disc flies standing up with thin edge facing target (like a saw blade)
+ability.hover.dualCharge=Whether or not should create two anchor points
+ability.hover.damage=Base damage dealt to targets
+ability.hover.speed=Movement speed of projectile
+ability.hover.lifetime=Maximum ticks before despawning
+ability.hover.knockback=Push force applied to targets
+ability.hover.boomerang=Projectile returns to caster after reaching max distance
+ability.hover.dashMode=Aggressive dashes toward target, Defensive dashes away, Directional dashes in looking direction
+ability.hover.aoe=Affects all valid targets in range instead of just one
+ability.hover.dmgOnPull=Deal damage continuously while pulling targets
+ability.hover.lineOfSight=Requires clear line of sight to the target
+ability.hover.dmgAtStart=Deal damage at the teleport origin location
+ability.hover.dmgAtEnd=Deal damage at the teleport destination
+ability.hover.instant=Heals instantly instead of over time
+ability.hover.healSelf=Ability can heal the casting NPC
+ability.hover.healAllies=Ability can heal nearby allied NPCs
+ability.hover.placement=Where the ability effect is placed (Caster, Target, etc.)
+ability.hover.lockTarget=Sweeper beam tracks the target's position
+ability.hover.canCounter=Enable counterattack when blocking damage
+ability.hover.counterType=Flat = fixed damage, Percent = % of blocked damage
+ability.hover.affectsCaster=Hazard can damage the NPC that created it
+ability.hover.sweepMode=Swipe = single arc attack, Spin = continuous rotation
+ability.hover.innerRadius=Minimum distance from caster. Entities closer than this are not hit. Creates a donut-shaped dead zone. Also shown on the telegraph.
+ability.hover.telegraphShape=Shape of the telegraph warning indicator. Different shapes use different size parameters.
+ability.hover.telegraphHeight=Vertical offset from the ground for telegraph rendering
+ability.hover.telegraphRadius=Radius of the telegraph shape (used by Circle, Ring, Square)
+ability.hover.telegraphInnerRadius=Inner radius creating a hollow center. Used by Ring (donut) and Cone (truncated wedge).
+ability.hover.telegraphLength=Forward distance of the telegraph shape (used by Line, Cone)
+ability.hover.telegraphWidth=Side-to-side width of the telegraph (used by Line)
+ability.hover.telegraphAngle=Spread angle in degrees (used by Cone)
+ability.hover.telegraphActiveTicks=How long the telegraph stays visible during the active phase (20 ticks = 1 second). Set to 0 for windup-only telegraph.
+ability.hover.syncTelegraph=When enabled, telegraph active duration automatically matches the ability duration
+ability.hover.launching=When enabled, wall launches forward dealing damage and knockback
+
+# Energy Barrier Abilities
+ability.cnpc.dome=Dome
+ability.cnpc.wall=Wall
+ability.cnpc.shield=Shield
+ability.cnpc.slicer=Slicer
+
+ability.section.barrier=Barrier
+ability.section.properties=Properties
+ability.section.panel=Panel
+ability.section.launch=Launch
+ability.section.slicer=Slicer
+ability.section.icon=Icon
+ability.hasIcon=Custom Icon
+ability.icon.tint=Tint Color
+
+ability.domeRadius=Dome Radius
+ability.useHealth=Use Health
+ability.maxHealth=Max Health
+ability.useDuration=Use Duration
+ability.duration=Duration
+ability.defaultMultiplier=Default Multiplier
+ability.innerAlpha=Inner Alpha
+ability.heightOffset=Height Offset
+ability.section.offset=Offset
+ability.offsetX=X Offset
+ability.offsetY=Y Offset
+ability.offsetZ=Z Offset
+
+ability.solid=Solid
+ability.knockbackEnabled=Knockback
+ability.knockbackStrength=Knockback Strength
+ability.absorbing=Absorbing
+ability.absorbRadius=Absorb Radius
+ability.reflect=Reflect
+ability.reflectStrength=Strength (%)
+ability.meleeEnabled=Allows Melee
+ability.meleeDamageMultiplier=Melee Multiplier
+
+ability.followCaster=Follow Caster
+ability.hover.followCaster=Dome stays centered on the caster as they move
+ability.hover.solid=Entities cannot pass through the barrier boundary
+ability.hover.knockbackEnabled=Repulsion field pushing entities away from barrier surface
+ability.hover.absorbing=Damage dealt to the caster is redirected to the barrier's health
+ability.hover.absorbRadius=Max distance from the barrier for absorption to work. -1 = unlimited, 0 = barrier extent (dome radius or panel size x3), positive = block radius
+ability.hover.reflect=Rebounds non-breaking projectiles and reduces their damage by Strength
+ability.targetOwner=Target Owner
+ability.hover.targetOwner=Sets the reflected projectile's target to the original caster. With homing enabled, the projectile will home toward its former caster.
+ability.hover.meleeEnabled=Barrier can be hit and damaged by melee attacks
+
+
+ability.variant.small=Small
+ability.variant.large=Large
+ability.variant.static=Static
+ability.variant.launched=Launched
+
+ability.addChain=Chain
+ability.entrySource=Add Entry Source
+ability.fromNpc=From NPC
+ability.byReference=By Reference
+ability.createNew=Create New
+ability.selectSlot=Select NPC Ability
+ability.loadType=Load Type
+ability.loadAbility=Load Ability
+ability.loadChain=Load Chain
+ability.validFor=Valid For
+ability.userType.NPC_ONLY=NPCs
+ability.userType.PLAYER_ONLY=Players
+ability.userType.BOTH=Both
+ability.userType.NONE=NO ONE!
+ability.icon.section.uv=UV Coordinates
+ability.icon.x=Icon X
+ability.icon.y=Icon Y
+ability.icon.layers=Layers
+ability.icon.layer=Layer
+
+gui.both=Both
+gui.players=Players
+gui.tags=Tags
+
+# Conditions
+condition.edit=Edit Condition
+condition.filter=Filter Type
+condition.filter.target=Target
+condition.filter.caster=Caster
+condition.filter.both=Both
+
+# Condition HP Threshold
+condition.hp_threshold=HP Threshold
+condition.hp_above=HP Above
+condition.hp_below=HP Below
+condition.hp_equal=HP Equal
+condition.threshold=Threshold
+condition.percent=Use Percent
+condition.threshold_type=Threshold Type
+
+# Condition Hit Count
+condition.hit_count=Hit Count
+condition.required_hits=Required Hits
+condition.within_ticks=Within (ticks)
+
+# Condition Item
+condition.item=Has Item
+condition.usage_type=Usage Type
+condition.armor_slot=Armor Slot
+condition.full_armor=Full Armor
+condition.item_count=Item Count
+condition.item_name=Item Name
+
+# Condition Threshold
+condition.above=Above
+condition.below=Below
+condition.equal=Equal
+condition.threshold_flat=Threshold
+condition.threshold_percent=Threshold %
+
+# Condition Quest Completed
+condition.quest_completed=Quest Completed
+condition.select_quest=Select Quest
+
+# Condition Has Effect
+condition.has_effect=Has Effect
+condition.select_effect=Select Effect
+
+# Condition Hover Tooltips
+condition.hover.type=Condition type that must be met for ability to activate
+condition.hover.hpAbove=Activates when NPC health is above this percentage
+condition.hover.hpBelow=Activates when NPC health is below this percentage
+condition.hover.targetHpAbove=Activates when target's health is above this percentage
+condition.hover.targetHpBelow=Activates when target's health is below this percentage
+condition.hover.hitCount=Activates after receiving X hits within the time window
+condition.hover.hits=Number of hits required to trigger condition
+condition.hover.within=Time window in ticks (20 ticks = 1 second)
+condition.hover.threshold=Health percentage threshold (1-99%)
+condition.hover.armor_slots=Equipment in specific armor slots
+condition.hover.item_name=Filter by item name or identifier
+condition.hover.required_count=Number of matching items required
+
+# Effect Hover Tooltips
+effect.hover.type=Potion effect type to apply to targets
+effect.hover.duration=Effect duration in ticks (20 ticks = 1 second)
+effect.hover.amplifier=Effect strength level (higher = stronger)
+effect.manual=Manual
+effect.potionid=Potion ID
+
+# =========================================
+# Auction House
+# =========================================
+
+# Auction Status
+auction.status.active=Active
+auction.status.ended=Ended
+auction.status.cancelled=Cancelled
+auction.status.claimed=Claimed
+
+# Auction Sort
+auction.sort.newest=Newest
+auction.sort.endingSoon=Ending Soon
+auction.sort.priceLow=Price: Low to High
+auction.sort.priceHigh=Price: High to Low
+auction.sort.mostBids=Most Bids
+
+# Claim Types
+auction.claim.item=Item
+auction.claim.currency=Sale Proceeds
+auction.claim.refund=Bid Refund
+
+# Notifications
+auction.notify.won=You won an auction!
+auction.notify.outbid=You were outbid!
+auction.notify.sold=Your item sold!
+auction.notify.expired=Your auction expired.
+auction.notify.claim=You have items to claim.
+
+# Main GUI
+auction.title=Auction House
+
+# Listing Display
+auction.seller=Seller: %s
+auction.currentBid=Current Bid: %s
+auction.buyout=Buyout: %s
+auction.timeLeft=Time Left: %s
+auction.bids=%d bids
+auction.noBids=No bids
+auction.startingPrice=Starting: %s
+
+# Sell Page
+auction.sell.startingPrice=Starting Price
+auction.sell.buyoutPrice=Buyout Price
+auction.sell.fee=Listing Fee: %s
+auction.sell.noItem=Place an item to sell
+
+# Filter
+auction.filter.search=Search
+
+# Bid Dialog
+auction.bid.minimum=Minimum Bid: %s
+auction.bid.yourBid=Your Bid:
+auction.bid.place=Place Bid
+auction.bid.buyout=Buyout Now
+
+# Errors
+auction.error.notEnoughCurrency=Not enough currency!
+auction.error.bidTooLow=Bid must be at least %s.
+auction.error.blacklisted=This item cannot be listed on the Auction House.
+auction.error.boundItem=Bound items cannot be listed on the Auction House.
+auction.error.bidExceedsBuyout=Bid meets or exceeds buyout price. Use Buy Now instead.
+
+# Navigation
+auction.nav.listings=Browse Auctions
+auction.nav.sell=Sell Item
+auction.nav.trades=My Trades
+auction.nav.filter=Filter
+
+# Claim Details
+auction.claim.amount=Amount: %s
+auction.claim.expires=Expires in %s days
+auction.claim.expiresSoon=Expires soon!
+auction.claim.clickToClaim=Click to claim
+
+# Filter
+auction.filter.sort=Sort By
+auction.filter.none=(none)
+auction.filter.leftClick=Left-click: Search
+auction.filter.rightClick=Right-click: Cycle Sort
+
+# Pagination
+auction.page.prev=Previous Page
+auction.page.next=Next Page
+
+# Sell Page
+auction.sell.confirm=Confirm Listing
+auction.sell.invalidPrice=Enter a valid starting price
+auction.sell.buyoutTooLow=Buyout must be higher than starting price
+auction.sell.placeItem=Place item here
+auction.sell.slotTitle=Item to Sell
+auction.sell.leftClear=Left-click to clear
+auction.sell.rightRemove=Right-click to remove 1
+auction.sell.leftAdd=Left-click to add stack
+auction.sell.rightAddOne=Right-click to add 1
+
+# Trades Page
+auction.trades.activeListing=Active Listing
+auction.trades.activeBid=Active Bid
+auction.trades.unavailable=Slot Unavailable
+auction.trades.rightClickToCancel=Right-click to cancel
+auction.trades.leftClickToClaim=Left-click to claim
+auction.trades.leftClickToIncrease=Left-click to increase bid
+auction.trades.winningBid=You are the highest bidder
+auction.trades.soldClaim=Item Sold!
+auction.trades.wonClaim=Auction Won!
+auction.trades.expiredClaim=Auction Expired
+auction.trades.refundClaim=Outbid - Refund Available
+auction.trades.confirmCancel=Cancel Listing?
+auction.trades.confirmClaim=Claim Item?
+auction.trades.rightClickConfirm=Right-click again to confirm
+auction.trades.leftClickConfirm=Left-click again to confirm
+auction.trades.otherClickCancel=Any other click to cancel
+auction.trades.buyer=Buyer
+auction.trades.outbidBy=Outbid by
+auction.trades.selling=Selling
+auction.trades.bidding=Bidding
+auction.trades.sold=Sold
+auction.trades.won=Won
+auction.trades.expired=Expired
+auction.trades.outbid=Outbid
+auction.trades.clickToRebid=Click to increase bid
+auction.trades.leftClickRebid=Left-click to rebid
+auction.trades.rightClickRefund=Right-click to claim refund
+auction.claim.soldItem=Item: %s
+auction.claim.buyer=Buyer: %s
+auction.claim.outbidBy=Outbid by: %s
+
+# Sell Page - Buyout Toggle
+auction.sell.allowBuyout=Allow Buy Now
+auction.sell.buyoutEnabled=Enabled
+auction.sell.buyoutEnabledDesc=Buyers can purchase immediately
+auction.sell.buyoutEnabledDesc2=at the buyout price
+auction.sell.buyoutDisabled=Disabled
+auction.sell.buyoutDisabledDesc=Auction only - no instant buy
+auction.sell.clickToToggle=Click to toggle
+auction.sell.notEnoughItems=Not enough items in inventory
+
+# Auction Bidding Info
+auction.info.currentBid=Current Bid
+auction.info.highBidder=High Bidder
+auction.info.startingPrice=Starting Price
+auction.info.buyoutPrice=Buyout Price
+auction.info.timeLeft=Time Left
+auction.info.bidCount=Total Bids
+
+# Auction Bid SubGui
+auction.bid.yourBalance=Your Balance: %s
+
+# Auction Buyout SubGui
+auction.buyout.title=Buy Now
+auction.buyout.confirm=Purchase this item for:
+
+# Global Auction Management GUI
+global.auction.manage.title=Global Auction Management
+global.auction.manage.listings=Listings
+global.auction.manage.create=Create
+global.auction.manage.claims=Claims
+global.auction.manage.sort=Sort
+global.auction.manage.search=Search
+global.auction.manage.page=Page
+global.auction.manage.hint.listings=Left-click: open listing details
+global.auction.manage.hint.listings2=Right-click: stop player | Shift-right: cancel to global
+global.auction.manage.hint.stop=Right-click: stop player
+global.auction.manage.hint.cancel=Shift-right-click: cancel to global
+global.auction.manage.hint.claims=Left-click twice to claim global entries
+global.auction.manage.details=Listing Details
+global.auction.manage.selectListing=Left-click a listing to view details
+global.auction.manage.seller=Seller Name
+global.auction.manage.startPrice=Start Price
+global.auction.manage.buyoutPrice=Buyout Price
+global.auction.manage.durationHours=Duration Hours
+global.auction.manage.stagedItem=Staged Item
+global.auction.manage.create.submit=Create Fake Auction
+global.auction.manage.hint.create=Use right-panel inventory to stage items
+global.auction.manage.confirm=Click again to confirm
+global.auction.manage.confirm.stop=Right-click again to confirm stop player
+global.auction.manage.confirm.cancel=Shift-right-click again to confirm cancel to global
+global.auction.manage.confirm.claim=Left-click again to confirm claim
+global.auction.manage.error.noItem=Stage an item first
+global.auction.manage.error.invalidStart=Enter a valid starting price
+global.auction.manage.error.invalidBuyout=Buyout must be zero or >= start
+
+# Directory Fullscreen
+gui.move=Move
+gui.moving=Moving
+gui.confirm=Confirm
+gui.move.selectItems=Select Items to Move (max %d) Press Confirm when Ready
+gui.move.selectCategory=Select Destination Category
+animation.mirror=Mirror
+gui.builtin.tag=(Built-in)
+ability.damage=Damage
+ability.allowed=Allowed
+gui.move.confirmLine=Move %d item(s) to:
+gui.category=Category

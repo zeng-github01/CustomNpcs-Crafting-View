@@ -1,0 +1,153 @@
+package noppes.npcs.entity;
+
+import net.minecraft.util.MathHelper;
+import net.minecraft.util.MovingObjectPosition;
+import net.minecraft.util.Vec3;
+import net.minecraft.world.World;
+
+public abstract class EntityNPCFlying extends EntityNPCInterface {
+
+    public boolean flyLimitAllow = false;
+
+    public EntityNPCFlying(World world) {
+        super(world);
+    }
+
+    @Override
+    public boolean canFly() {
+        return ais.movementType == 1;
+    }
+
+    @Override
+    public void fall(float distance) {
+        if (!canFly())
+            super.fall(distance);
+    }
+
+    @Override
+    protected void updateFallState(double p_180433_1_, boolean p_180433_3_) {
+        if (!canFly())
+            super.updateFallState(p_180433_1_, p_180433_3_);
+    }
+
+    @Override
+    public boolean isOnLadder() {
+        return false;
+    }
+
+    @Override
+    public void onLivingUpdate() {
+        super.onLivingUpdate();
+    }
+
+    @Override
+    public void moveEntityWithHeading(float p_70612_1_, float p_70612_2_) {
+        if (handleMountedMovement(p_70612_1_, p_70612_2_))
+            return;
+        if (!this.canFly() || this.hurtTime != 0 || !this.canBreathe()) {
+            setNpcFlyingState(false);
+            super.moveEntityWithHeading(p_70612_1_, p_70612_2_);
+            return;
+        }
+
+        boolean aboveLimit = false;
+        double heightOffGround = this.posY - this.worldObj.getTopSolidOrLiquidBlock((int) this.posX, (int) this.posZ);
+        if (heightOffGround < 0) {
+            Vec3 pos = Vec3.createVectorHelper(this.posX, this.posY, this.posZ);
+            Vec3 posLimit = Vec3.createVectorHelper(this.posX, this.posY - this.ais.flyHeightLimit, this.posZ);
+            MovingObjectPosition mob = this.worldObj.rayTraceBlocks(pos, posLimit, true);
+            if (mob == null || mob.typeOfHit == MovingObjectPosition.MovingObjectType.MISS) {
+                aboveLimit = true;
+            }
+        } else if (heightOffGround > this.ais.flyHeightLimit) {
+            aboveLimit = true;
+        }
+        if (aboveLimit && this.ais.hasFlyLimit) {
+            this.flyLimitAllow = false;
+            if (this.motionY > 0) {
+                this.motionY = 0;
+            }
+        } else if (heightOffGround < Math.ceil(this.height) && this.motionY == 0) {
+            this.flyLimitAllow = false;
+            setNpcFlyingState(false);
+            super.moveEntityWithHeading(p_70612_1_, p_70612_2_);
+            return;
+        }
+        this.flyLimitAllow = true;
+        setNpcFlyingState(true);
+
+        double desiredMotionY = this.motionY;
+        if (this.getNavigator().noPath()) {
+            desiredMotionY = -Math.abs(this.ais.flyGravity);
+        }
+        this.motionY = desiredMotionY;
+        super.moveEntityWithHeading(p_70612_1_, p_70612_2_);
+        this.motionY = desiredMotionY;
+
+        this.updateLimbSwing();
+    }
+
+    public void updateLimbSwing() {
+        this.prevLimbSwingAmount = this.limbSwingAmount;
+        double distanceX = this.posX - this.prevPosX;
+        double distanceZ = this.posZ - this.prevPosZ;
+        float distance = MathHelper.sqrt_double(distanceX * distanceX + distanceZ * distanceZ) * 4.0F;
+        if (distance > 1.0F) {
+            distance = 1.0F;
+        }
+        this.limbSwingAmount += (distance - this.limbSwingAmount) * 0.4F;
+        this.limbSwing += this.limbSwingAmount;
+    }
+
+    @Override
+    public void performMountedMovement(float strafe, float forward, float moveSpeed) {
+        if (!this.canFly() || this.hurtTime != 0 || !this.canBreathe()) {
+            setNpcFlyingState(false);
+            super.performMountedMovement(strafe, forward, moveSpeed);
+            return;
+        }
+
+        boolean flightModeActive = isMountFlightModeActive();
+
+        boolean aboveLimit = false;
+        double heightOffGround = this.posY - this.worldObj.getTopSolidOrLiquidBlock((int) this.posX, (int) this.posZ);
+        if (heightOffGround < 0) {
+            Vec3 pos = Vec3.createVectorHelper(this.posX, this.posY, this.posZ);
+            Vec3 posLimit = Vec3.createVectorHelper(this.posX, this.posY - this.ais.flyHeightLimit, this.posZ);
+            MovingObjectPosition mob = this.worldObj.rayTraceBlocks(pos, posLimit, true);
+            if (mob == null || mob.typeOfHit == MovingObjectPosition.MovingObjectType.MISS) {
+                aboveLimit = true;
+            }
+        } else if (heightOffGround > this.ais.flyHeightLimit) {
+            aboveLimit = true;
+        }
+        if (aboveLimit && this.ais.hasFlyLimit) {
+            this.flyLimitAllow = false;
+            if (this.motionY > 0) {
+                this.motionY = 0;
+            }
+        } else if (heightOffGround < Math.ceil(this.height) && this.motionY == 0) {
+            this.flyLimitAllow = false;
+            setNpcFlyingState(false);
+            super.performMountedMovement(strafe, forward, moveSpeed);
+            return;
+        }
+        this.flyLimitAllow = true;
+        setNpcFlyingState(true);
+
+        if (flightModeActive) {
+            super.performMountedMovement(strafe, forward, moveSpeed);
+            return;
+        }
+
+        double desiredMotionY = this.motionY;
+        if (this.getNavigator().noPath()) {
+            desiredMotionY = -Math.abs(this.ais.flyGravity);
+        }
+        this.motionY = desiredMotionY;
+        super.performMountedMovement(strafe, forward, moveSpeed);
+        this.motionY = desiredMotionY;
+
+        this.updateLimbSwing();
+    }
+}

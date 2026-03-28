@@ -1,0 +1,17 @@
+package noppes.npcs.constants;
+
+public enum EnumScrollData {
+    OPTIONAL,
+    MAGIC,
+    MAGIC_CYCLES,
+    DIALOG_GROUP,
+    QUEST_GROUP,
+    ABILITY_TYPES,
+    CUSTOM_ABILITIES,
+    BUILTIN_ABILITIES,
+    ANIMATIONS,
+    BUILTIN_ANIMATIONS,
+    CHAINED_ABILITIES,
+    CATEGORY_GROUP,
+    CATEGORY_LIST
+}

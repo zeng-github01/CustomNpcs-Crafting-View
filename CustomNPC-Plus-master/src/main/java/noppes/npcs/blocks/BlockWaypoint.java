@@ -1,0 +1,58 @@
+package noppes.npcs.blocks;
+
+import kamkeel.npcs.network.PacketHandler;
+import kamkeel.npcs.network.packets.data.gui.GuiWaypointPacket;
+import net.minecraft.block.BlockContainer;
+import net.minecraft.block.material.Material;
+import net.minecraft.entity.EntityLivingBase;
+import net.minecraft.entity.player.EntityPlayer;
+import net.minecraft.entity.player.EntityPlayerMP;
+import net.minecraft.item.ItemStack;
+import net.minecraft.nbt.NBTTagCompound;
+import net.minecraft.tileentity.TileEntity;
+import net.minecraft.world.World;
+import noppes.npcs.CustomItems;
+import noppes.npcs.CustomNpcsPermissions;
+import noppes.npcs.blocks.tiles.TileWaypoint;
+
+public class BlockWaypoint extends BlockContainer {
+
+    public BlockWaypoint() {
+        super(Material.iron);
+        this.setCreativeTab(CustomItems.tab);
+    }
+
+    @Override
+    public boolean onBlockActivated(World par1World, int i, int j, int k, EntityPlayer player, int par6, float par7, float par8, float par9) {
+        if (par1World.isRemote)
+            return false;
+        ItemStack currentItem = player.inventory.getCurrentItem();
+        if (currentItem != null && currentItem.getItem() == CustomItems.wand && CustomNpcsPermissions.hasPermission(player, CustomNpcsPermissions.EDIT_WAYPOINT)) {
+            TileEntity tile = par1World.getTileEntity(i, j, k);
+            NBTTagCompound compound = new NBTTagCompound();
+            tile.writeToNBT(compound);
+            PacketHandler.Instance.sendToPlayer(new GuiWaypointPacket(compound), (EntityPlayerMP) player);
+            return true;
+        }
+        return false;
+    }
+
+    @Override
+    public void onBlockPlacedBy(World world, int i, int j, int k, EntityLivingBase entityliving, ItemStack item) {
+        if (entityliving instanceof EntityPlayer) {
+            if (!world.isRemote) {
+                // Server-side: sync TileEntity data to client and open GUI (same as onBlockActivated)
+                TileEntity tile = world.getTileEntity(i, j, k);
+                NBTTagCompound compound = new NBTTagCompound();
+                tile.writeToNBT(compound);
+                PacketHandler.Instance.sendToPlayer(new GuiWaypointPacket(compound), (EntityPlayerMP) entityliving);
+            }
+        }
+    }
+
+    @Override
+    public TileEntity createNewTileEntity(World var1, int var2) {
+        return new TileWaypoint();
+    }
+
+}
