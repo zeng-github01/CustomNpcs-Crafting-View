@@ -42,7 +42,7 @@ public class RecipePanel {
         this.isAnvil = isAnvil;
 
         if (RecipeController.Instance != null) {
-            allRecipes.addAll(RecipeController.Instance.globalRecipes.values());
+            allRecipes.addAll(RecipeController.Instance.carpentryRecipes.values());
         }
 
         // Build category list: Browse All + config categories
