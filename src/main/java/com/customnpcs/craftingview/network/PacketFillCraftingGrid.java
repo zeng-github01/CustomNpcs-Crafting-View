@@ -11,7 +11,7 @@ import cpw.mods.fml.common.network.simpleimpl.IMessageHandler;
 import cpw.mods.fml.common.network.simpleimpl.MessageContext;
 import io.netty.buffer.ByteBuf;
 import noppes.npcs.containers.ContainerCarpentryBench;
-import noppes.npcs.controllers.RecipeCarpentry;
+import noppes.npcs.controllers.data.RecipeCarpentry;
 import noppes.npcs.controllers.RecipeController;
 
 public class PacketFillCraftingGrid implements IMessage {
@@ -43,8 +43,8 @@ public class PacketFillCraftingGrid implements IMessage {
             Container openContainer = player.openContainer;
             if (!(openContainer instanceof ContainerCarpentryBench)) return null;
 
-            RecipeCarpentry recipe = RecipeController.instance != null
-                ? RecipeController.instance.getRecipe(msg.recipeId)
+            RecipeCarpentry recipe = RecipeController.Instance != null
+                ? RecipeController.Instance.getRecipe(msg.recipeId)
                 : null;
             if (recipe == null) {
                 CraftingViewMod.LOG.warn("Recipe not found: id={}", msg.recipeId);

@@ -19,7 +19,7 @@ import cpw.mods.fml.relauncher.SideOnly;
 import noppes.npcs.client.gui.player.GuiNpcCarpentryBench;
 import noppes.npcs.client.gui.util.GuiContainerNPCInterface;
 import noppes.npcs.containers.ContainerCarpentryBench;
-import noppes.npcs.controllers.RecipeCarpentry;
+import noppes.npcs.controllers.data.RecipeCarpentry;
 
 @SideOnly(Side.CLIENT)
 public class GuiEventHandler {

@@ -11,7 +11,7 @@ import com.customnpcs.craftingview.Config.CategoryDefinition;
 
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
-import noppes.npcs.controllers.RecipeCarpentry;
+import noppes.npcs.controllers.data.RecipeCarpentry;
 import noppes.npcs.controllers.RecipeController;
 
 @SideOnly(Side.CLIENT)
@@ -41,8 +41,8 @@ public class RecipePanel {
     public RecipePanel(boolean isAnvil) {
         this.isAnvil = isAnvil;
 
-        if (RecipeController.instance != null) {
-            allRecipes.addAll(RecipeController.instance.anvilRecipes.values());
+        if (RecipeController.Instance != null) {
+            allRecipes.addAll(RecipeController.Instance.globalRecipes.values());
         }
 
         // Build category list: Browse All + config categories
