@@ -1,0 +1,23 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(find D:/code/CustomNPCs-Crafting-View/CustomNPCs_code -type f -name *Recipe* -o -name *Crafting*)",
+      "Bash(grep -A 2 -B 2 [A-Za-z])",
+      "Bash(javap -c \"D:\\\\code\\\\CustomNPCs-Crafting-View\\\\CustomNPCs_code\\\\noppes\\\\npcs\\\\controllers\\\\RecipeController.class\")",
+      "Bash(javap -private \"D:\\\\code\\\\CustomNPCs-Crafting-View\\\\CustomNPCs_code\\\\noppes\\\\npcs\\\\controllers\\\\RecipeCarpentry.class\")",
+      "Bash(javap -private \"D:\\\\code\\\\CustomNPCs-Crafting-View\\\\CustomNPCs_code\\\\noppes\\\\npcs\\\\client\\\\gui\\\\player\\\\GuiRecipes.class\")",
+      "Bash(javap -private noppes/npcs/controllers/RecipeController.class)",
+      "Bash(javap -private noppes/npcs/controllers/RecipeCarpentry.class)",
+      "Bash(javap -private noppes/npcs/controllers/RecipesDefault.class)",
+      "Bash(javap -cp . noppes.npcs.controllers.RecipeController)",
+      "Bash(javap -cp . noppes.npcs.controllers.RecipeCarpentry)",
+      "Bash(javap -cp . noppes.npcs.controllers.RecipesDefault)",
+      "Bash(javap -cp . noppes.npcs.client.gui.player.GuiRecipes)",
+      "Bash(javap -cp . noppes.npcs.client.gui.player.GuiNpcCarpentryBench)",
+      "Bash(javap -private -cp . noppes.npcs.controllers.RecipeController)",
+      "Bash(javap -private -cp . noppes.npcs.controllers.RecipeCarpentry)",
+      "Bash(javap -private -cp . noppes.npcs.controllers.RecipesDefault)",
+      "WebFetch(domain:nexus.gtnewhorizons.com)"
+    ]
+  }
+}
