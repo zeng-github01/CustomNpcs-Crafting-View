@@ -48,18 +48,6 @@ config/*.cfg
 # Build artifacts
 *.log
 
-# Local reference folders (not part of the mod source)
-CustomNPCs_code-1.6.4/
-CustomNPCs_code/
-CustomNPCs_code_fernflower/
-CustomNPC-Plus-master/
-CustomNpcs-Crafting-View/
-Multiplayer164/
-
-# Claude Code/Claude IDE data
-.claude/
-.esdata/
-
 # Local JDK config
 gradle.properties
 
