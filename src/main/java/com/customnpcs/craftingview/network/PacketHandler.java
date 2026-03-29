@@ -75,28 +75,28 @@ public class PacketHandler implements IPacketHandler {
                 if (required == null) continue;
 
                 int gridSlot = row * 4 + col;
-                ItemStack existing = container.craftMatrix.func_70301_a(gridSlot);
+                ItemStack existing = container.craftMatrix.getStackInSlot(gridSlot);
                 if (existing != null && matches(existing, required, recipe.ignoreDamage)) continue;
 
                 if (existing != null) {
                     returnToInventory(player, existing);
-                    container.craftMatrix.func_70299_a(gridSlot, null);
+                    container.craftMatrix.setInventorySlotContents(gridSlot, null);
                 }
 
                 ItemStack found = findAndTake(player, required, recipe.ignoreDamage);
                 if (found != null) {
-                    container.craftMatrix.func_70299_a(gridSlot, found);
+                    container.craftMatrix.setInventorySlotContents(gridSlot, found);
                 }
             }
         }
 
-        container.func_75130_a(container.craftMatrix);
-        container.func_75142_b();
+        container.onCraftMatrixChanged(container.craftMatrix);
+        container.detectAndSendChanges();
     }
 
     private void returnToInventory(EntityPlayerMP player, ItemStack stack) {
-        if (!player.inventory.func_70441_a(stack.func_77946_l())) {
-            player.func_71021_b(stack, false);
+        if (!player.inventory.addItemStackToInventory(stack.copy())) {
+            player.dropPlayerItemWithRandomChoice(stack, false);
         }
     }
 
@@ -106,12 +106,12 @@ public class PacketHandler implements IPacketHandler {
             if (stack == null) continue;
             if (!matches(stack, required, ignoreDamage)) continue;
 
-            ItemStack taken = stack.func_77946_l();
-            taken.field_77994_a = 1;
-            if (stack.field_77994_a <= 1) {
+            ItemStack taken = stack.copy();
+            taken.stackSize = 1;
+            if (stack.stackSize <= 1) {
                 player.inventory.mainInventory[i] = null;
             } else {
-                stack.field_77994_a--;
+                stack.stackSize--;
             }
             return taken;
         }
@@ -119,8 +119,8 @@ public class PacketHandler implements IPacketHandler {
     }
 
     private boolean matches(ItemStack stack, ItemStack required, boolean ignoreDamage) {
-        if (stack.field_77993_c != required.field_77993_c) return false;
-        if (!ignoreDamage && stack.func_77960_j() != required.func_77960_j()) return false;
+        if (stack.itemID != required.itemID) return false;
+        if (!ignoreDamage && stack.getItemDamage() != required.getItemDamage()) return false;
         return true;
     }
 }

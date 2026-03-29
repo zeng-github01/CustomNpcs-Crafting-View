@@ -6,6 +6,7 @@ import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.FontRenderer;
 import net.minecraft.client.gui.Gui;
 import net.minecraft.client.gui.GuiScreen;
+import net.minecraft.client.gui.GuiTextField;
 import net.minecraft.client.renderer.RenderHelper;
 import net.minecraft.client.renderer.entity.RenderItem;
 import net.minecraft.item.ItemStack;
@@ -81,10 +82,9 @@ public class RecipePanelRenderer {
         fr.drawString(panel.isAnvil() ? "Anvil" : "Carpentry", cx, cy, COLOR_TEXT);
         cy += 10;
 
-        panel.searchField.xPosition = cx;
-        panel.searchField.yPosition = cy;
-        panel.searchField.width = pw - PADDING * 2;
-        panel.searchField.drawTextBox();
+        // Search field
+        GuiTextField tf = panel.buildSearchField(cx, cy);
+        tf.drawTextBox();
         cy += SEARCH_FIELD_H + 3;
 
         cy = drawCategoryTabs(cx, cy, pw - PADDING * 2, panel, mouseX, mouseY, fr);
@@ -116,7 +116,7 @@ public class RecipePanelRenderer {
             if (result != null) renderItem(result, cx, ry);
 
             String name = (recipe.name == null || recipe.name.isEmpty()) && result != null
-                ? result.func_82833_r() : (recipe.name != null ? recipe.name : "");
+                ? result.getDisplayName() : (recipe.name != null ? recipe.name : "");
             String truncated = fr.trimStringToWidth(name, pw - PADDING * 2 - 18 - 14);
             fr.drawString(truncated, cx + 18, ry + 4, COLOR_TEXT);
 
@@ -230,7 +230,7 @@ public class RecipePanelRenderer {
     }
 
     private static void drawItemTooltip(GuiScreen gui, ItemStack stack, int mouseX, int mouseY) {
-        List tooltip = stack.func_82840_a(
+        List tooltip = stack.getTooltip(
             Minecraft.getMinecraft().thePlayer,
             Minecraft.getMinecraft().gameSettings.advancedItemTooltips);
         TooltipHelper.drawHoveringText(gui, tooltip, mouseX, mouseY, Minecraft.getMinecraft().fontRenderer);
