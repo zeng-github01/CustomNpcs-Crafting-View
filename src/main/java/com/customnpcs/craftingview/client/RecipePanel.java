@@ -33,6 +33,10 @@ public class RecipePanel {
     private RecipeCarpentry selectedRecipe = null;
     private int activeCategoryIndex = 0;
 
+    // Search field state — rebuilt each frame at the correct position
+    private String searchText = "";
+    private boolean searchFocused = false;
+    // Current frame's field (set by renderer before input handling)
     public GuiTextField searchField;
 
     public RecipePanel(boolean isAnvil) {
@@ -46,15 +50,37 @@ public class RecipePanel {
         categories.add(BROWSE_ALL);
         categories.addAll(Config.categories);
 
-        searchField = new GuiTextField(Minecraft.getMinecraft().fontRenderer, 0, 0, PANEL_WIDTH - 8, 12);
-        searchField.setMaxStringLength(32);
-        searchField.setText("");
-
         rebuildFiltered();
     }
 
+    public GuiTextField buildSearchField(int x, int y) {
+        GuiTextField tf = new GuiTextField(Minecraft.getMinecraft().fontRenderer,
+            x, y, PANEL_WIDTH - 8, 12);
+        tf.setMaxStringLength(32);
+        tf.setText(searchText);
+        tf.setFocused(searchFocused);
+        searchField = tf;
+        return tf;
+    }
+
+    public void syncSearchField() {
+        if (searchField != null) {
+            searchText = searchField.getText();
+            searchFocused = searchField.isFocused();
+        }
+    }
+
+    public void setSearchFocused(boolean focused) {
+        searchFocused = focused;
+        if (searchField != null) searchField.setFocused(focused);
+    }
+
+    public boolean isSearchFocused() {
+        return searchFocused;
+    }
+
     public void rebuildFiltered() {
-        String query = searchField.getText().toLowerCase().trim();
+        String query = searchText.toLowerCase().trim();
         CategoryDefinition cat = (CategoryDefinition) categories.get(activeCategoryIndex);
 
         filtered.clear();
@@ -85,7 +111,7 @@ public class RecipePanel {
     private boolean matchesSearch(RecipeCarpentry recipe, String query) {
         if (recipe.name != null && recipe.name.toLowerCase().contains(query)) return true;
         if (recipe.recipeOutput != null) {
-            String itemName = recipe.recipeOutput.func_82833_r().toLowerCase();
+            String itemName = recipe.recipeOutput.getDisplayName().toLowerCase();
             if (itemName.contains(query)) return true;
         }
         return false;

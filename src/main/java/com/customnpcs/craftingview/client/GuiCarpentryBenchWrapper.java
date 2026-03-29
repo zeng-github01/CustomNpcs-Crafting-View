@@ -1,5 +1,7 @@
 package com.customnpcs.craftingview.client;
 
+import java.util.List;
+
 import net.minecraft.client.Minecraft;
 
 import org.lwjgl.input.Keyboard;
@@ -20,30 +22,22 @@ public class GuiCarpentryBenchWrapper extends noppes.npcs.client.gui.player.GuiN
 
     public GuiCarpentryBenchWrapper(ContainerCarpentryBench container) {
         super(container);
-        // 1.6.4 ContainerCarpentryBench has no getMetadata(); always use global recipes
         panel = new RecipePanel(false);
     }
 
     @Override
     public void func_73863_a(int mouseX, int mouseY, float partialTick) {
         super.func_73863_a(mouseX, mouseY, partialTick);
+        panel.syncSearchField();
         RecipePanelRenderer.render(this, panel, mouseX, mouseY);
         handleMouseInput(mouseX, mouseY);
         handleKeyInput();
     }
 
-    public int getGuiLeft() {
-        return field_74198_m;
-    }
-
-    public int getGuiTop() {
-        return field_74197_n;
-    }
+    public int getGuiLeft() { return guiLeft; }
+    public int getGuiTop() { return guiTop; }
 
     private void handleMouseInput(int mx, int my) {
-        int guiLeft = field_74198_m;
-        int guiTop = field_74197_n;
-
         boolean leftDown = Mouse.isButtonDown(0);
         boolean clicked = leftDown && !lastLeftDown;
         lastLeftDown = leftDown;
@@ -59,7 +53,7 @@ public class GuiCarpentryBenchWrapper extends noppes.npcs.client.gui.player.GuiN
         if (!clicked) return;
 
         if (!RecipePanelRenderer.isPanelHit(panel, guiLeft, guiTop, mx, my)) {
-            panel.searchField.setFocused(false);
+            panel.setSearchFocused(false);
             return;
         }
 
@@ -70,7 +64,10 @@ public class GuiCarpentryBenchWrapper extends noppes.npcs.client.gui.player.GuiN
 
         if (panel.isCollapsed()) return;
 
-        panel.searchField.mouseClicked(mx, my, 0);
+        if (panel.searchField != null) {
+            panel.searchField.mouseClicked(mx, my, 0);
+            panel.syncSearchField();
+        }
 
         int catIdx = RecipePanelRenderer.getCategoryTabHit(panel, guiLeft, guiTop, mx, my);
         if (catIdx >= 0) {
@@ -80,7 +77,7 @@ public class GuiCarpentryBenchWrapper extends noppes.npcs.client.gui.player.GuiN
 
         int rowIdx = RecipePanelRenderer.getRecipeRowHit(panel, guiLeft, guiTop, mx, my);
         if (rowIdx >= 0) {
-            java.util.List visible = panel.getVisible();
+            List visible = panel.getVisible();
             if (rowIdx < visible.size()) {
                 RecipeCarpentry recipe = (RecipeCarpentry) visible.get(rowIdx);
                 if (RecipePanelRenderer.isPlusButtonHit(panel, guiLeft, guiTop, mx, my, rowIdx)) {
@@ -97,11 +94,14 @@ public class GuiCarpentryBenchWrapper extends noppes.npcs.client.gui.player.GuiN
 
     private void handleKeyInput() {
         if (panel.isCollapsed()) return;
-        if (!panel.searchField.isFocused()) return;
+        if (!panel.isSearchFocused()) return;
         while (Keyboard.next()) {
             if (Keyboard.getEventKeyState()) {
-                panel.searchField.textboxKeyTyped(Keyboard.getEventCharacter(), Keyboard.getEventKey());
-                panel.rebuildFiltered();
+                if (panel.searchField != null) {
+                    panel.searchField.textboxKeyTyped(Keyboard.getEventCharacter(), Keyboard.getEventKey());
+                    panel.syncSearchField();
+                    panel.rebuildFiltered();
+                }
             }
         }
     }
