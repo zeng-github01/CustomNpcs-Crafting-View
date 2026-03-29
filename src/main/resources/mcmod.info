@@ -1,21 +1,16 @@
+[
 {
-	"modListVersion": 2,
-	"modList": [{
-		"modid": "customnpcs_crafting_view",
-		"name": "CustomNPCs Crafting View",
-		"description": "Shows CustomNPCs crafting recipes in a side panel when opening the Carpentry Bench.",
-		"version": "@VERSION@",
-		"mcversion": "1.6.4",
-		"url": "",
-		"updateUrl": "",
-		"authorList": [],
-		"credits": "",
-		"logoFile": "",
-		"screenshots": [],
-		"parent": "",
-		"requiredMods": ["customnpcs"],
-		"dependencies": ["customnpcs"],
-		"dependants": [],
-		"useDependencyInformation": true
-	}]
+  "modid": "customnpcs_crafting_view",
+  "name": "CustomNPCs Crafting View",
+  "version": "1.0.0",
+  "description": "Shows CustomNPCs crafting recipes in a side panel when opening the Carpentry Bench.",
+  "credits": "",
+  "logoFile": "",
+  "url": "",
+  "updateUrl": "",
+  "authorList": [],
+  "parent": "",
+  "screenshots": [],
+  "dependencies": []
 }
+]
