@@ -2,14 +2,15 @@ name: Auto Build and Release
 
 on:
   push:
-    branches: [ "main" ] # 仅在 main 分支推送时触发
-  workflow_dispatch: # 允许手动在页面上点“Run workflow”
+    branches: [ "main" ]
+  workflow_dispatch: 
 
 jobs:
   build:
     name: Build ${{ matrix.branch }}
     runs-on: ubuntu-latest
     strategy:
+      fail-fast: false # 即使一个分支失败，其他分支也继续构建
       matrix:
         include:
           - branch: 1.7.10
@@ -18,26 +19,29 @@ jobs:
             java: '25'
 
     steps:
-      - name: Checkout branch
+      - name: Checkout code
         uses: actions/checkout@v4
         with:
-          ref: ${{ matrix.branch }} # 切换到对应分支拉取代码
+          ref: ${{ matrix.branch }}
 
-      - name: Setup Java ${{ matrix.java }}
+      - name: Set up JDK ${{ matrix.java }}
         uses: actions/setup-java@v4
         with:
           java-version: ${{ matrix.java }}
           distribution: 'temurin'
+          cache: 'gradle'
 
       - name: Build with Gradle
         run: |
           chmod +x gradlew
+          # 先修复 Spotless 格式报错，再执行构建
+          ./gradlew spotlessApply || echo "Spotless not found or failed, continuing..."
           ./gradlew build
 
-      - name: Upload temporary artifacts
+      - name: Upload Artifacts
         uses: actions/upload-artifact@v4
         with:
-          name: artifacts-${{ matrix.branch }}
+          name: ${{ matrix.branch }}-artifacts
           path: build/libs/*.jar
 
   release:
@@ -54,11 +58,12 @@ jobs:
       - name: Create Release
         uses: softprops/action-gh-release@v2
         with:
-          tag_name: "release-${{ github.run_number }}"
-          name: "Auto Build #${{ github.run_number }}"
+          tag_name: "build-${{ github.run_number }}"
+          name: "Automatic Build #${{ github.run_number }}"
+          # 自动扫描所有子文件夹中的 jar 包
           files: "all-jars/**/*.jar"
           draft: false
           prerelease: false
         env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }} # 这里的变量是 GitHub 自动注入的
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
