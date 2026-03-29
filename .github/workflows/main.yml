@@ -1,0 +1,66 @@
+name: Auto Build and Release
+
+on:
+  push:
+    branches: [ "main" ] # 仅在 main 分支推送时触发
+  workflow_dispatch: # 允许手动在页面上点“Run workflow”
+
+jobs:
+  build:
+    name: Build ${{ matrix.branch }}
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        include:
+          - branch: 1.7.10
+            java: '25'
+          - branch: 1.7.10-cnpcplus
+            java: '25'
+          - branch: 1.6.4
+            java: '8'
+
+    steps:
+      - name: Checkout branch
+        uses: actions/checkout@v4
+        with:
+          ref: ${{ matrix.branch }} # 切换到对应分支拉取代码
+
+      - name: Setup Java ${{ matrix.java }}
+        uses: actions/setup-java@v4
+        with:
+          java-version: ${{ matrix.java }}
+          distribution: 'temurin'
+
+      - name: Build with Gradle
+        run: |
+          chmod +x gradlew
+          ./gradlew build
+
+      - name: Upload temporary artifacts
+        uses: actions/upload-artifact@v4
+        with:
+          name: artifacts-${{ matrix.branch }}
+          path: build/libs/*.jar
+
+  release:
+    needs: build
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - name: Download all artifacts
+        uses: actions/download-artifact@v4
+        with:
+          path: all-jars
+
+      - name: Create Release
+        uses: softprops/action-gh-release@v2
+        with:
+          tag_name: "release-${{ github.run_number }}"
+          name: "Auto Build #${{ github.run_number }}"
+          files: "all-jars/**/*.jar"
+          draft: false
+          prerelease: false
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }} # 这里的变量是 GitHub 自动注入的
+
