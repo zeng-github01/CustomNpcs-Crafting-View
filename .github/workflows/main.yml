@@ -16,8 +16,6 @@ jobs:
             java: '25'
           - branch: 1.7.10-cnpcplus
             java: '25'
-          - branch: 1.6.4
-            java: '8'
 
     steps:
       - name: Checkout branch
