@@ -57,14 +57,14 @@ tasks.withType(JavaCompile) {
 }
 
 version = "1.0.0"
-group = "com.example.examplemod"
-archivesBaseName = "ExampleMod"
+group = "com.customnpcs.craftingview"
+archivesBaseName = "CustomNPCsCraftingView"
 
 minecraft {
 	version = "1.6.4-9.11.1.964"
-	
+
 	replace '@VERSION@', project.version
-	replaceIn 'ExampleMod.java'
+	replaceIn 'CraftingViewMod.java'
 }
 
 task downloadMinecraft {
