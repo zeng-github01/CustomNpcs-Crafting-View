@@ -11,8 +11,8 @@ import com.customnpcs.craftingview.Config.CategoryDefinition;
 
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
-import noppes.npcs.controllers.RecipeCarpentry;
-import noppes.npcs.controllers.RecipeController;
+import noppes.common.controllers.RecipeCarpentry;
+import noppes.common.controllers.RecipeController;
 
 @SideOnly(Side.CLIENT)
 public class RecipePanel {
@@ -97,7 +97,7 @@ public class RecipePanel {
 
     private boolean matchesCategory(RecipeCarpentry recipe, CategoryDefinition cat) {
         if (cat == BROWSE_ALL) return true;
-        if (!cat.recipeIds.isEmpty() && cat.recipeIds.contains(Integer.valueOf(recipe.id))) return true;
+        if (!cat.recipeIds.isEmpty() && cat.recipeIds.contains(Integer.valueOf(recipe.field_6))) return true;
         if (!cat.recipeNames.isEmpty() && recipe.name != null) {
             String rname = recipe.name.toLowerCase();
             for (int i = 0; i < cat.recipeNames.size(); i++) {

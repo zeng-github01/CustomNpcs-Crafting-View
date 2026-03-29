@@ -7,8 +7,8 @@ import net.minecraftforge.event.ForgeSubscribe;
 
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
-import noppes.npcs.client.gui.player.GuiNpcCarpentryBench;
-import noppes.npcs.containers.ContainerCarpentryBench;
+import noppes.client.gui.player.GuiNpcCarpentryBench;
+import noppes.common.containers.ContainerCarpentryBench;
 
 @SideOnly(Side.CLIENT)
 public class GuiEventHandler {

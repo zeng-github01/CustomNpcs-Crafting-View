@@ -11,11 +11,11 @@ import com.customnpcs.craftingview.network.PacketHandler;
 
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
-import noppes.npcs.containers.ContainerCarpentryBench;
-import noppes.npcs.controllers.RecipeCarpentry;
+import noppes.common.containers.ContainerCarpentryBench;
+import noppes.common.controllers.RecipeCarpentry;
 
 @SideOnly(Side.CLIENT)
-public class GuiCarpentryBenchWrapper extends noppes.npcs.client.gui.player.GuiNpcCarpentryBench {
+public class GuiCarpentryBenchWrapper extends noppes.client.gui.player.GuiNpcCarpentryBench {
 
     private final RecipePanel panel;
     private boolean lastLeftDown = false;
@@ -82,7 +82,7 @@ public class GuiCarpentryBenchWrapper extends noppes.npcs.client.gui.player.GuiN
                 RecipeCarpentry recipe = (RecipeCarpentry) visible.get(rowIdx);
                 if (RecipePanelRenderer.isPlusButtonHit(panel, guiLeft, guiTop, mx, my, rowIdx)) {
                     Minecraft.getMinecraft().getNetHandler().addToSendQueue(
-                        PacketHandler.buildFillGridPacket(recipe.id));
+                        PacketHandler.buildFillGridPacket(recipe.field_6));
                 } else if (recipe == panel.getSelectedRecipe()) {
                     panel.selectRecipe(null);
                 } else {

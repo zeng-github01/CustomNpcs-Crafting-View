@@ -93,9 +93,22 @@ tasks.downloadClient.onlyIf { false }
 tasks.downloadServer.dependsOn downloadMinecraft
 tasks.downloadServer.onlyIf { false }
 
+sourceSets {
+    main {
+        java {
+            srcDir 'src/main/java'
+            srcDir 'stubs'
+        }
+    }
+}
+
+dependencies {
+    compile fileTree(dir: 'libs', include: '*.jar')
+}
+
 jar
 {
-
+    exclude 'noppes/**'
 }
 
 processResources

@@ -58,13 +58,13 @@ public class PacketHandler implements IPacketHandler {
     private void handleFillGrid(DataInputStream dis, EntityPlayerMP player) throws Exception {
         int recipeId = dis.readInt();
 
-        if (!(player.openContainer instanceof noppes.npcs.containers.ContainerCarpentryBench)) return;
-        noppes.npcs.containers.ContainerCarpentryBench container =
-            (noppes.npcs.containers.ContainerCarpentryBench) player.openContainer;
+        if (!(player.openContainer instanceof noppes.common.containers.ContainerCarpentryBench)) return;
+        noppes.common.containers.ContainerCarpentryBench container =
+            (noppes.common.containers.ContainerCarpentryBench) player.openContainer;
 
-        noppes.npcs.controllers.RecipeController rc = noppes.npcs.controllers.RecipeController.instance;
+        noppes.common.controllers.RecipeController rc = noppes.common.controllers.RecipeController.instance;
         if (rc == null) return;
-        noppes.npcs.controllers.RecipeCarpentry recipe = rc.getRecipe(recipeId);
+        noppes.common.controllers.RecipeCarpentry recipe = rc.getRecipe(recipeId);
         if (recipe == null) return;
 
         int rw = recipe.recipeWidth;
