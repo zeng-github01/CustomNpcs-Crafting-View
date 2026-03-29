@@ -18,7 +18,7 @@ import cpw.mods.fml.common.network.Player;
 
 public class PacketHandler implements IPacketHandler {
 
-    public static final String CHANNEL = CraftingViewMod.MODID;
+    public static final String CHANNEL = "cnpcs_craftview";
     public static final byte PACKET_FILL_GRID = 0;
 
     public static void init() {

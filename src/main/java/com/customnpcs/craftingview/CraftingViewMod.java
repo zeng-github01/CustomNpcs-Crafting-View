@@ -7,7 +7,7 @@ import cpw.mods.fml.common.event.FMLPreInitializationEvent;
 
 @Mod(
     modid = CraftingViewMod.MODID,
-    version = "@VERSION@",
+    version = "1.0.0",
     name = "CustomNPCs Crafting View",
     acceptedMinecraftVersions = "[1.6.4]",
     dependencies = "required-after:customnpcs")
