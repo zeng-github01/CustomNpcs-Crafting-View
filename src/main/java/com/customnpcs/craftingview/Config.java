@@ -23,14 +23,13 @@ public class Config {
                 count++;
             }
 
-            // If none exist yet, write a default example
+            // If none exist yet, write a default example then parse it
             if (count == 0) {
                 cfg.get(
                     "categories",
                     "category_0",
                     "示例分类|1,2,3|").comment = "格式: 分类名|recipeId1,recipeId2,...|recipeName1,recipeName2,...  留空表示不过滤";
-                cfg.save();
-                return;
+                count = 1;
             }
 
             categoriesMutable.clear();
