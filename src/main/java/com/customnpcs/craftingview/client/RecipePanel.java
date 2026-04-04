@@ -88,9 +88,12 @@ public class RecipePanel {
     }
 
     private boolean matchesSearch(RecipeCarpentry recipe, String query) {
-        if (recipe.name != null && recipe.name.toLowerCase().contains(query)) return true;
+        if (recipe.name != null && recipe.name.toLowerCase()
+            .contains(query)) return true;
         if (recipe.getRecipeOutput() != null) {
-            String itemName = recipe.getRecipeOutput().getDisplayName().toLowerCase();
+            String itemName = recipe.getRecipeOutput()
+                .getDisplayName()
+                .toLowerCase();
             if (itemName.contains(query)) return true;
         }
         return false;

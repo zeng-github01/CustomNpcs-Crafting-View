@@ -105,8 +105,8 @@ public class RecipePanelRenderer {
         }
     }
 
-    private static int drawHeader(int cx, int px, int cy, int pw, RecipePanel panel,
-        int mouseX, int mouseY, FontRenderer fr) {
+    private static int drawHeader(int cx, int px, int cy, int pw, RecipePanel panel, int mouseX, int mouseY,
+        FontRenderer fr) {
 
         fr.drawString(panel.isAnvil() ? "Anvil" : "Carpentry", cx, cy, COLOR_TEXT);
         cy += 10;
@@ -131,8 +131,8 @@ public class RecipePanelRenderer {
         return cy;
     }
 
-    private static void drawRecipeRow(int cx, int px, int ry, int pw, RecipeCarpentry recipe,
-        boolean selected, int mouseX, int mouseY, FontRenderer fr) {
+    private static void drawRecipeRow(int cx, int px, int ry, int pw, RecipeCarpentry recipe, boolean selected,
+        int mouseX, int mouseY, FontRenderer fr) {
 
         boolean hovered = mouseX >= cx && mouseX < px + pw - PADDING && mouseY >= ry && mouseY < ry + RECIPE_ROW_H;
         if (selected) drawRect(cx, ry, px + pw - PADDING, ry + RECIPE_ROW_H, COLOR_ROW_SEL);
@@ -141,8 +141,8 @@ public class RecipePanelRenderer {
         ItemStack result = recipe.getRecipeOutput();
         if (result != null) renderItem(result, cx, ry);
 
-        String name = (recipe.name == null || recipe.name.isEmpty()) && result != null
-            ? result.getDisplayName() : (recipe.name != null ? recipe.name : "");
+        String name = (recipe.name == null || recipe.name.isEmpty()) && result != null ? result.getDisplayName()
+            : (recipe.name != null ? recipe.name : "");
         fr.drawString(fr.trimStringToWidth(name, pw - PADDING * 2 - 18 - 14), cx + 18, ry + 4, COLOR_TEXT);
 
         int btnX = px + pw - PADDING - 12;
@@ -151,8 +151,8 @@ public class RecipePanelRenderer {
         fr.drawString("+", btnX + 2, ry + 4, COLOR_TEXT);
     }
 
-    private static ItemStack drawIngredientGrid(int cx, int cy, RecipeCarpentry recipe,
-        int mouseX, int mouseY, FontRenderer fr) {
+    private static ItemStack drawIngredientGrid(int cx, int cy, RecipeCarpentry recipe, int mouseX, int mouseY,
+        FontRenderer fr) {
 
         fr.drawString("Recipe:", cx, cy, COLOR_TEXT_DIM);
         cy += 10;
@@ -196,7 +196,12 @@ public class RecipePanelRenderer {
             int tx = x + i * (tabW + 1);
             boolean active = i == panel.getActiveCategoryIndex();
             boolean hov = mouseX >= tx && mouseX < tx + tabW && mouseY >= y && mouseY < y + CATEGORY_TAB_H;
-            drawRect(tx, y, tx + tabW, y + CATEGORY_TAB_H, active ? COLOR_CAT_ACT : (hov ? 0xFF555566 : COLOR_CAT_INACT));
+            drawRect(
+                tx,
+                y,
+                tx + tabW,
+                y + CATEGORY_TAB_H,
+                active ? COLOR_CAT_ACT : (hov ? 0xFF555566 : COLOR_CAT_INACT));
             String label = fr.trimStringToWidth(cats.get(i).name, tabW - 2);
             fr.drawString(label, tx + 2, y + 3, COLOR_TEXT);
         }
@@ -233,7 +238,8 @@ public class RecipePanelRenderer {
         GL11.glEnable(GL12.GL_RESCALE_NORMAL);
         itemRenderer.renderItemAndEffectIntoGUI(
             Minecraft.getMinecraft().fontRenderer,
-            Minecraft.getMinecraft().getTextureManager(),
+            Minecraft.getMinecraft()
+                .getTextureManager(),
             stack,
             x,
             y);
