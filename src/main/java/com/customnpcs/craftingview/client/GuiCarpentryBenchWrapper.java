@@ -3,6 +3,8 @@ package com.customnpcs.craftingview.client;
 import java.util.List;
 
 import net.minecraft.client.Minecraft;
+import net.minecraft.client.audio.PositionedSoundRecord;
+import net.minecraft.util.ResourceLocation;
 
 import org.lwjgl.input.Keyboard;
 import org.lwjgl.input.Mouse;
@@ -58,6 +60,7 @@ public class GuiCarpentryBenchWrapper extends noppes.npcs.client.gui.player.GuiN
         }
 
         if (RecipePanelRenderer.isCollapseButtonHit(panel, guiLeft, guiTop, mx, my)) {
+            playClickSound();
             panel.toggleCollapsed();
             return;
         }
@@ -71,6 +74,7 @@ public class GuiCarpentryBenchWrapper extends noppes.npcs.client.gui.player.GuiN
 
         int catIdx = RecipePanelRenderer.getCategoryTabHit(panel, guiLeft, guiTop, mx, my);
         if (catIdx >= 0) {
+            playClickSound();
             panel.setCategory(catIdx);
             return;
         }
@@ -81,11 +85,14 @@ public class GuiCarpentryBenchWrapper extends noppes.npcs.client.gui.player.GuiN
             if (rowIdx < visible.size()) {
                 RecipeCarpentry recipe = (RecipeCarpentry) visible.get(rowIdx);
                 if (RecipePanelRenderer.isPlusButtonHit(panel, guiLeft, guiTop, mx, my, rowIdx)) {
+                    playClickSound();
                     Minecraft.getMinecraft().getNetHandler().addToSendQueue(
                         PacketHandler.buildFillGridPacket(recipe.id));
                 } else if (recipe == panel.getSelectedRecipe()) {
+                    playClickSound();
                     panel.selectRecipe(null);
                 } else {
+                    playClickSound();
                     panel.selectRecipe(recipe);
                 }
             }
@@ -104,5 +111,11 @@ public class GuiCarpentryBenchWrapper extends noppes.npcs.client.gui.player.GuiN
                 }
             }
         }
+    }
+
+    private void playClickSound() {
+        Minecraft.getMinecraft().getSoundHandler().playSound(
+            PositionedSoundRecord.func_147674_a(new ResourceLocation("gui.button.press"), 1.0F)
+        );
     }
 }
