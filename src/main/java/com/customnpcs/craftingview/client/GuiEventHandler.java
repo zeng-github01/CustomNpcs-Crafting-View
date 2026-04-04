@@ -2,7 +2,10 @@ package com.customnpcs.craftingview.client;
 
 import java.util.List;
 
+import net.minecraft.client.Minecraft;
+import net.minecraft.client.audio.PositionedSoundRecord;
 import net.minecraft.client.gui.inventory.GuiContainer;
+import net.minecraft.util.ResourceLocation;
 import net.minecraftforge.client.event.GuiOpenEvent;
 import net.minecraftforge.client.event.GuiScreenEvent;
 
@@ -85,6 +88,7 @@ public class GuiEventHandler {
 
         // Collapse toggle
         if (RecipePanelRenderer.isCollapseButtonHit(activePanel, guiLeft, guiTop, mx, my)) {
+            playClickSound();
             activePanel.toggleCollapsed();
             return;
         }
@@ -97,6 +101,7 @@ public class GuiEventHandler {
         // Category tab
         int catIdx = RecipePanelRenderer.getCategoryTabHit(activePanel, guiLeft, guiTop, mx, my);
         if (catIdx >= 0) {
+            playClickSound();
             activePanel.setCategory(catIdx);
             return;
         }
@@ -108,10 +113,13 @@ public class GuiEventHandler {
             if (rowIdx < visible.size()) {
                 RecipeCarpentry recipe = visible.get(rowIdx);
                 if (RecipePanelRenderer.isPlusButtonHit(activePanel, guiLeft, guiTop, mx, my, rowIdx)) {
+                    playClickSound();
                     PacketHandler.CHANNEL.sendToServer(new PacketFillCraftingGrid(recipe.id));
                 } else if (recipe == activePanel.getSelectedRecipe()) {
+                    playClickSound();
                     activePanel.selectRecipe(null);
                 } else {
+                    playClickSound();
                     activePanel.selectRecipe(recipe);
                 }
             }
@@ -127,5 +135,11 @@ public class GuiEventHandler {
                 activePanel.rebuildFiltered();
             }
         }
+    }
+
+    private void playClickSound() {
+        Minecraft.getMinecraft().getSoundHandler().playSound(
+            PositionedSoundRecord.func_147674_a(new ResourceLocation("gui.button.press"), 1.0F)
+        );
     }
 }
