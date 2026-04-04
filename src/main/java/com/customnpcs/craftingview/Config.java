@@ -28,7 +28,7 @@ public class Config {
                 cfg.get(
                     "categories",
                     "category_0",
-                    "示例分类|1,2,3|").comment = "格式: 分类名|recipeId1,recipeId2,...|recipeName1,recipeName2,...  留空表示不过滤";
+                    "example||Gun Wooden,Gun Stone,Gun Iron,Gun Gold,Gun Diamond,Gun Emerald,Gun Bronze|").comment = "格式: 分类名|recipeId1,recipeId2,...|recipeName1,recipeName2,...  留空表示不过滤";
                 count = 1;
             }
 
