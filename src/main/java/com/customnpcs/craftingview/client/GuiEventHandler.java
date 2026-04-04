@@ -2,7 +2,6 @@ package com.customnpcs.craftingview.client;
 
 import java.util.List;
 
-import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.inventory.GuiContainer;
 import net.minecraftforge.client.event.GuiOpenEvent;
 import net.minecraftforge.client.event.GuiScreenEvent;
@@ -49,8 +48,7 @@ public class GuiEventHandler {
         if (activePanel == null) return;
         if (!(event.gui instanceof GuiContainerNPCInterface)) return;
 
-        Minecraft mc = Minecraft.getMinecraft();
-        GuiContainerNPCInterface gui = (GuiContainerNPCInterface) mc.currentScreen;
+        GuiContainerNPCInterface gui = (GuiContainerNPCInterface) event.gui;
 
         int mx = event.mouseX;
         int my = event.mouseY;
