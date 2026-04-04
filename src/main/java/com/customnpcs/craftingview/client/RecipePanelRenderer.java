@@ -88,7 +88,7 @@ public class RecipePanelRenderer {
         for (int i = 0; i < visible.size(); i++) {
             RecipeCarpentry recipe = visible.get(i);
             boolean selected = recipe == sel;
-            tooltipStack = drawRecipeRow(cx, px, cy, pw, recipe, selected, mouseX, mouseY, fr);
+            drawRecipeRow(cx, px, cy, pw, recipe, selected, mouseX, mouseY, fr);
             cy += RECIPE_ROW_H;
             if (selected) {
                 tooltipStack = drawIngredientGrid(cx, cy, recipe, mouseX, mouseY, fr);
@@ -131,7 +131,7 @@ public class RecipePanelRenderer {
         return cy;
     }
 
-    private static ItemStack drawRecipeRow(int cx, int px, int ry, int pw, RecipeCarpentry recipe,
+    private static void drawRecipeRow(int cx, int px, int ry, int pw, RecipeCarpentry recipe,
         boolean selected, int mouseX, int mouseY, FontRenderer fr) {
 
         boolean hovered = mouseX >= cx && mouseX < px + pw - PADDING && mouseY >= ry && mouseY < ry + RECIPE_ROW_H;
@@ -149,8 +149,6 @@ public class RecipePanelRenderer {
         boolean btnHov = mouseX >= btnX && mouseX < btnX + 10 && mouseY >= ry + 3 && mouseY < ry + 13;
         drawRect(btnX, ry + 3, btnX + 10, ry + 13, btnHov ? COLOR_PLUS_HOV : COLOR_PLUS_BTN);
         fr.drawString("+", btnX + 2, ry + 4, COLOR_TEXT);
-
-        return null;
     }
 
     private static ItemStack drawIngredientGrid(int cx, int cy, RecipeCarpentry recipe,
