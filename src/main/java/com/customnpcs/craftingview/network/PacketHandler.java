@@ -51,7 +51,7 @@ public class PacketHandler implements IPacketHandler {
                 handleFillGrid(dis, (EntityPlayerMP) player);
             }
         } catch (Exception e) {
-            e.printStackTrace();
+            CraftingViewMod.LOG.error("Error handling packet", e);
         }
     }
 

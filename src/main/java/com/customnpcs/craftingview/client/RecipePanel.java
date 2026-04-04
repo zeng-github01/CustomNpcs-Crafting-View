@@ -96,15 +96,14 @@ public class RecipePanel {
     }
 
     private boolean matchesCategory(RecipeCarpentry recipe, CategoryDefinition cat) {
-        if (cat == BROWSE_ALL) return true;
-        if (!cat.recipeIds.isEmpty() && cat.recipeIds.contains(Integer.valueOf(recipe.id))) return true;
-        if (!cat.recipeNames.isEmpty() && recipe.name != null) {
+        if (cat == BROWSE_ALL || (cat.recipeIds.isEmpty() && cat.recipeNames.isEmpty())) return true;
+        if (cat.recipeIds.contains(Integer.valueOf(recipe.id))) return true;
+        if (recipe.name != null) {
             String rname = recipe.name.toLowerCase();
             for (int i = 0; i < cat.recipeNames.size(); i++) {
                 if (rname.contains((String) cat.recipeNames.get(i))) return true;
             }
         }
-        if (cat.recipeIds.isEmpty() && cat.recipeNames.isEmpty()) return true;
         return false;
     }
 

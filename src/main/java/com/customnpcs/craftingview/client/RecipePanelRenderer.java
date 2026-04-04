@@ -60,8 +60,7 @@ public class RecipePanelRenderer {
         FontRenderer fr = Minecraft.getMinecraft().fontRenderer;
 
         if (panel.isCollapsed()) {
-            int tabX = guiLeft - COLLAPSE_BTN_W - 8;
-            drawCollapsedTab(tabX, py, mouseX, mouseY);
+            drawCollapsedTab(guiLeft - COLLAPSE_BTN_W - 8, py, mouseX, mouseY);
             return;
         }
 
@@ -70,7 +69,6 @@ public class RecipePanelRenderer {
         RecipeCarpentry sel = panel.getSelectedRecipe();
 
         int ph = calcPanelHeight(visible, sel, panel);
-
         drawRect(px, py, px + pw, py + ph, COLOR_BG);
         drawBorder(px, py, pw, ph);
 
@@ -78,11 +76,36 @@ public class RecipePanelRenderer {
         int cy = py + PADDING;
 
         drawCollapseButton(px + pw - COLLAPSE_BTN_W - 2, py + 2, mouseX, mouseY, false);
+        cy = drawHeader(cx, px, cy, pw, panel, mouseX, mouseY, fr);
+
+        // Recipe list — grid inserted inline after selected row
+        ItemStack tooltipStack = null;
+        for (int i = 0; i < visible.size(); i++) {
+            RecipeCarpentry recipe = (RecipeCarpentry) visible.get(i);
+            boolean selected = recipe == sel;
+            drawRecipeRow(cx, px, cy, pw, recipe, selected, mouseX, mouseY, fr);
+            cy += RECIPE_ROW_H;
+            if (selected) {
+                tooltipStack = drawIngredientGrid(cx, cy, recipe, mouseX, mouseY, fr);
+                cy += GRID_BLOCK_H;
+            }
+        }
+
+        if (panel.getFilteredSize() > panel.getScrollOffset() + panel.getVisiblePerPage()) {
+            fr.drawString("\u25BC", px + pw / 2 - 3, cy, COLOR_TEXT_DIM);
+        }
+
+        if (tooltipStack != null) {
+            drawItemTooltip(gui, tooltipStack, mouseX, mouseY);
+        }
+    }
+
+    private static int drawHeader(int cx, int px, int cy, int pw, RecipePanel panel,
+        int mouseX, int mouseY, FontRenderer fr) {
 
         fr.drawString(panel.isAnvil() ? "Anvil" : "Carpentry", cx, cy, COLOR_TEXT);
         cy += 10;
 
-        // Search field
         GuiTextField tf = panel.buildSearchField(cx, cy);
         tf.drawTextBox();
         cy += SEARCH_FIELD_H + 3;
@@ -93,77 +116,58 @@ public class RecipePanelRenderer {
         drawRect(px, cy, px + pw, cy + 1, COLOR_BORDER);
         cy += 1 + 3;
 
-        boolean canScrollUp = panel.getScrollOffset() > 0;
-        if (canScrollUp) {
+        if (panel.getScrollOffset() > 0) {
             fr.drawString("\u25B2", px + pw / 2 - 3, cy, COLOR_TEXT_DIM);
         }
         cy += 7;
 
+        return cy;
+    }
+
+    private static void drawRecipeRow(int cx, int px, int ry, int pw, RecipeCarpentry recipe,
+        boolean selected, int mouseX, int mouseY, FontRenderer fr) {
+
+        boolean hovered = mouseX >= cx && mouseX < px + pw - PADDING && mouseY >= ry && mouseY < ry + RECIPE_ROW_H;
+        if (selected) drawRect(cx, ry, px + pw - PADDING, ry + RECIPE_ROW_H, COLOR_ROW_SEL);
+        else if (hovered) drawRect(cx, ry, px + pw - PADDING, ry + RECIPE_ROW_H, COLOR_ROW_HOV);
+
+        ItemStack result = recipe.recipeOutput;
+        if (result != null) renderItem(result, cx, ry);
+
+        String name = (recipe.name == null || recipe.name.isEmpty()) && result != null
+            ? result.getDisplayName() : (recipe.name != null ? recipe.name : "");
+        fr.drawString(fr.trimStringToWidth(name, pw - PADDING * 2 - 18 - 14), cx + 18, ry + 4, COLOR_TEXT);
+
+        int btnX = px + pw - PADDING - 12;
+        boolean btnHov = mouseX >= btnX && mouseX < btnX + 10 && mouseY >= ry + 3 && mouseY < ry + 13;
+        drawRect(btnX, ry + 3, btnX + 10, ry + 13, btnHov ? COLOR_PLUS_HOV : COLOR_PLUS_BTN);
+        fr.drawString("+", btnX + 2, ry + 4, COLOR_TEXT);
+    }
+
+    private static ItemStack drawIngredientGrid(int cx, int cy, RecipeCarpentry recipe,
+        int mouseX, int mouseY, FontRenderer fr) {
+
+        fr.drawString("Recipe:", cx, cy, COLOR_TEXT_DIM);
+        cy += 10;
+
         ItemStack tooltipStack = null;
-        int tooltipX = 0, tooltipY = 0;
-
-        for (int i = 0; i < visible.size(); i++) {
-            RecipeCarpentry recipe = (RecipeCarpentry) visible.get(i);
-            int ry = cy;
-            boolean hovered = mouseX >= cx && mouseX < px + pw - PADDING
-                && mouseY >= ry && mouseY < ry + RECIPE_ROW_H;
-            boolean selected = recipe == sel;
-
-            if (selected) drawRect(cx, ry, px + pw - PADDING, ry + RECIPE_ROW_H, COLOR_ROW_SEL);
-            else if (hovered) drawRect(cx, ry, px + pw - PADDING, ry + RECIPE_ROW_H, COLOR_ROW_HOV);
-
-            ItemStack result = recipe.recipeOutput;
-            if (result != null) renderItem(result, cx, ry);
-
-            String name = (recipe.name == null || recipe.name.isEmpty()) && result != null
-                ? result.getDisplayName() : (recipe.name != null ? recipe.name : "");
-            String truncated = fr.trimStringToWidth(name, pw - PADDING * 2 - 18 - 14);
-            fr.drawString(truncated, cx + 18, ry + 4, COLOR_TEXT);
-
-            int btnX = px + pw - PADDING - 12;
-            boolean btnHov = mouseX >= btnX && mouseX < btnX + 10 && mouseY >= ry + 3 && mouseY < ry + 13;
-            drawRect(btnX, ry + 3, btnX + 10, ry + 13, btnHov ? COLOR_PLUS_HOV : COLOR_PLUS_BTN);
-            fr.drawString("+", btnX + 2, ry + 4, COLOR_TEXT);
-
-            cy += RECIPE_ROW_H;
-
-            if (selected) {
-                fr.drawString("Recipe:", cx, cy, COLOR_TEXT_DIM);
-                cy += 10;
-                int rw = recipe.recipeWidth;
-                int rh = recipe.recipeHeight;
-                for (int row = 0; row < 4; row++) {
-                    for (int col = 0; col < 4; col++) {
-                        int gx = cx + col * (GRID_CELL + 1);
-                        int gy = cy + row * (GRID_CELL + 1);
-                        drawRect(gx, gy, gx + GRID_CELL, gy + GRID_CELL, 0xFF333333);
-                        ItemStack ing = null;
-                        if (row < rh && col < rw) {
-                            ing = recipe.getCraftingItem(row * rw + col);
-                        }
-                        if (ing != null) {
-                            renderItem(ing, gx, gy);
-                            if (mouseX >= gx && mouseX < gx + GRID_CELL
-                                && mouseY >= gy && mouseY < gy + GRID_CELL) {
-                                tooltipStack = ing;
-                                tooltipX = mouseX;
-                                tooltipY = mouseY;
-                            }
-                        }
+        int rw = recipe.recipeWidth;
+        int rh = recipe.recipeHeight;
+        for (int row = 0; row < 4; row++) {
+            for (int col = 0; col < 4; col++) {
+                int gx = cx + col * (GRID_CELL + 1);
+                int gy = cy + row * (GRID_CELL + 1);
+                drawRect(gx, gy, gx + GRID_CELL, gy + GRID_CELL, 0xFF333333);
+                ItemStack ing = (row < rh && col < rw) ? recipe.getCraftingItem(row * rw + col) : null;
+                if (ing != null) {
+                    renderItem(ing, gx, gy);
+                    if (mouseX >= gx && mouseX < gx + GRID_CELL && mouseY >= gy && mouseY < gy + GRID_CELL) {
+                        tooltipStack = ing;
                     }
                 }
-                cy += 4 * (GRID_CELL + 1) + PADDING;
             }
         }
-
-        boolean canScrollDown = panel.getFilteredSize() > panel.getScrollOffset() + panel.getVisiblePerPage();
-        if (canScrollDown) {
-            fr.drawString("\u25BC", px + pw / 2 - 3, cy, COLOR_TEXT_DIM);
-        }
-
-        if (tooltipStack != null) {
-            drawItemTooltip(gui, tooltipStack, tooltipX, tooltipY);
-        }
+        return tooltipStack;
     }
 
     static int calcPanelHeight(List visible, RecipeCarpentry sel, RecipePanel panel) {
@@ -264,36 +268,35 @@ public class RecipePanelRenderer {
         return -1;
     }
 
+    private static int getRowY(int baseY, List visible, RecipeCarpentry sel, int targetIndex) {
+        int cy = baseY;
+        for (int i = 0; i < targetIndex; i++) {
+            cy += RECIPE_ROW_H;
+            if (visible.get(i) == sel) cy += GRID_BLOCK_H;
+        }
+        return cy;
+    }
+
     public static int getRecipeRowHit(RecipePanel panel, int guiLeft, int guiTop, int mx, int my) {
         int px = panel.getPanelX(guiLeft);
         int cx = px + PADDING;
-        int cy = guiTop + LIST_BASE_OFFSET;
         List visible = panel.getVisible();
         RecipeCarpentry sel = panel.getSelectedRecipe();
         for (int i = 0; i < visible.size(); i++) {
-            int ry = cy;
+            int ry = getRowY(guiTop + LIST_BASE_OFFSET, visible, sel, i);
             if (mx >= cx && mx < px + RecipePanel.PANEL_WIDTH - PADDING
                 && my >= ry && my < ry + RECIPE_ROW_H) return i;
-            cy += RECIPE_ROW_H;
-            if (visible.get(i) == sel) cy += GRID_BLOCK_H;
         }
         return -1;
     }
 
     public static boolean isPlusButtonHit(RecipePanel panel, int guiLeft, int guiTop, int mx, int my, int rowIndex) {
         int px = panel.getPanelX(guiLeft);
-        int cy = guiTop + LIST_BASE_OFFSET;
         List visible = panel.getVisible();
         RecipeCarpentry sel = panel.getSelectedRecipe();
-        for (int i = 0; i < visible.size(); i++) {
-            if (i == rowIndex) {
-                int btnX = px + RecipePanel.PANEL_WIDTH - PADDING - 12;
-                return mx >= btnX && mx < btnX + 10 && my >= cy + 3 && my < cy + 13;
-            }
-            cy += RECIPE_ROW_H;
-            if (visible.get(i) == sel) cy += GRID_BLOCK_H;
-        }
-        return false;
+        int ry = getRowY(guiTop + LIST_BASE_OFFSET, visible, sel, rowIndex);
+        int btnX = px + RecipePanel.PANEL_WIDTH - PADDING - 12;
+        return mx >= btnX && mx < btnX + 10 && my >= ry + 3 && my < ry + 13;
     }
 
     public static boolean isPanelHit(RecipePanel panel, int guiLeft, int guiTop, int mx, int my) {

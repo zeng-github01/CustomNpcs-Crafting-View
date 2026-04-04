@@ -71,8 +71,8 @@ public class Config {
 
         public CategoryDefinition(String name, List recipeIds, List recipeNames) {
             this.name = name;
-            this.recipeIds = recipeIds;
-            this.recipeNames = recipeNames;
+            this.recipeIds = Collections.unmodifiableList(recipeIds);
+            this.recipeNames = Collections.unmodifiableList(recipeNames);
         }
     }
 }
