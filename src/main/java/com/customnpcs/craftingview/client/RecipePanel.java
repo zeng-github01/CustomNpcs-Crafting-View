@@ -11,8 +11,8 @@ import com.customnpcs.craftingview.Config.CategoryDefinition;
 
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
-import noppes.npcs.controllers.data.RecipeCarpentry;
 import noppes.npcs.controllers.RecipeController;
+import noppes.npcs.controllers.data.RecipeCarpentry;
 
 @SideOnly(Side.CLIENT)
 public class RecipePanel {
@@ -88,9 +88,12 @@ public class RecipePanel {
     }
 
     private boolean matchesSearch(RecipeCarpentry recipe, String query) {
-        if (recipe.name != null && recipe.name.toLowerCase().contains(query)) return true;
+        if (recipe.name != null && recipe.name.toLowerCase()
+            .contains(query)) return true;
         if (recipe.getRecipeOutput() != null) {
-            String itemName = recipe.getRecipeOutput().getDisplayName().toLowerCase();
+            String itemName = recipe.getRecipeOutput()
+                .getDisplayName()
+                .toLowerCase();
             if (itemName.contains(query)) return true;
         }
         return false;
