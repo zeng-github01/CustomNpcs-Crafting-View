@@ -18,6 +18,6 @@ Please select the corresponding version.
 
 branch:
 
-- [1.6.4](ttps://github.com/postyizhan/Customnpcs-Crafting-View/tree/1.6.4)
+- [1.6.4](https://github.com/postyizhan/Customnpcs-Crafting-View/tree/1.6.4)
 - [1.7.10](https://github.com/postyizhan/Customnpcs-Crafting-View/tree/1.7.10)
 - [1.7.10-cnpcplus](https://github.com/postyizhan/Customnpcs-Crafting-View/tree/1.7.10-cnpcplus)
