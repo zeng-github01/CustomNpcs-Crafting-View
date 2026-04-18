@@ -48,13 +48,9 @@ jobs:
         id: variant
         run: |
           BRANCH="${{ github.ref_name }}"
-          if [[ "$BRANCH" == *"cnpcplus"* ]]; then
-            echo "name=1.7.10-cnpcplus" >> $GITHUB_OUTPUT
-            echo "version_number=${{ steps.version.outputs.version }}-cnpcplus" >> $GITHUB_OUTPUT
-          else
-            echo "name=1.7.10" >> $GITHUB_OUTPUT
-            echo "version_number=${{ steps.version.outputs.version }}" >> $GITHUB_OUTPUT
-          fi
+          VERSION="${{ steps.version.outputs.version }}"
+          echo "name=$BRANCH" >> $GITHUB_OUTPUT
+          echo "version_number=${VERSION}-${BRANCH}" >> $GITHUB_OUTPUT
 
       - name: Publish to Modrinth
         env:
