@@ -43,7 +43,6 @@ public class RecipePanel {
         this.isAnvil = isAnvil;
 
         if (RecipeController.instance != null) {
-            allRecipes.addAll(RecipeController.instance.globalRecipes.values());
             allRecipes.addAll(RecipeController.instance.anvilRecipes.values());
         }
 
