@@ -4,6 +4,7 @@ import java.io.ByteArrayInputStream;
 import java.io.ByteArrayOutputStream;
 import java.io.DataInputStream;
 import java.io.DataOutputStream;
+import java.util.logging.Level;
 
 import net.minecraft.entity.player.EntityPlayerMP;
 import net.minecraft.item.ItemStack;
@@ -51,7 +52,7 @@ public class PacketHandler implements IPacketHandler {
                 handleFillGrid(dis, (EntityPlayerMP) player);
             }
         } catch (Exception e) {
-            CraftingViewMod.LOG.error("Error handling packet", e);
+            CraftingViewMod.LOG.log(Level.SEVERE, "Error handling packet", e);
         }
     }
 
@@ -60,7 +61,7 @@ public class PacketHandler implements IPacketHandler {
 
         if (!(player.openContainer instanceof noppes.npcs.containers.ContainerCarpentryBench)) return;
         noppes.npcs.containers.ContainerCarpentryBench container =
-            (noppes.npcs.containers.ContainerCarpentryBench) player.openContainer;
+                (noppes.npcs.containers.ContainerCarpentryBench) player.openContainer;
 
         noppes.npcs.controllers.RecipeController rc = noppes.npcs.controllers.RecipeController.instance;
         if (rc == null) return;
