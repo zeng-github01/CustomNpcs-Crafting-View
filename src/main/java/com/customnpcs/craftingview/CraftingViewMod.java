@@ -1,12 +1,12 @@
 package com.customnpcs.craftingview;
 
-import org.apache.logging.log4j.LogManager;
-import org.apache.logging.log4j.Logger;
-
 import cpw.mods.fml.common.Mod;
 import cpw.mods.fml.common.SidedProxy;
 import cpw.mods.fml.common.event.FMLInitializationEvent;
 import cpw.mods.fml.common.event.FMLPreInitializationEvent;
+
+import java.util.logging.LogManager;
+import java.util.logging.Logger;
 
 @Mod(
     modid = CraftingViewMod.MODID,
@@ -17,7 +17,7 @@ import cpw.mods.fml.common.event.FMLPreInitializationEvent;
 public class CraftingViewMod {
 
     public static final String MODID = "customnpcs_crafting_view";
-    public static final Logger LOG = LogManager.getLogger(MODID);
+    public static final Logger LOG = LogManager.getLogManager().getLogger(MODID);
 
     @SidedProxy(
         clientSide = "com.customnpcs.craftingview.ClientProxy",

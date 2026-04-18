@@ -3,8 +3,6 @@ package com.customnpcs.craftingview.client;
 import java.util.List;
 
 import net.minecraft.client.Minecraft;
-import net.minecraft.client.audio.PositionedSoundRecord;
-import net.minecraft.util.ResourceLocation;
 
 import org.lwjgl.input.Keyboard;
 import org.lwjgl.input.Mouse;
@@ -114,8 +112,6 @@ public class GuiCarpentryBenchWrapper extends noppes.npcs.client.gui.player.GuiN
     }
 
     private void playClickSound() {
-        Minecraft.getMinecraft().getSoundHandler().playSound(
-            PositionedSoundRecord.func_147674_a(new ResourceLocation("gui.button.press"), 1.0F)
-        );
+        Minecraft.getMinecraft().sndManager.playSoundFX("random.click", 1.0F, 1.0F);
     }
 }
