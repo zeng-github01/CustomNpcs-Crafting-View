@@ -15,7 +15,9 @@ import org.lwjgl.input.Mouse;
 import com.customnpcs.craftingview.network.PacketFillCraftingGrid;
 import com.customnpcs.craftingview.network.PacketHandler;
 
+import cpw.mods.fml.common.eventhandler.EventPriority;
 import cpw.mods.fml.common.eventhandler.SubscribeEvent;
+import cpw.mods.fml.common.gameevent.TickEvent;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 import noppes.npcs.client.gui.player.GuiNpcCarpentryBench;
@@ -28,6 +30,18 @@ public class GuiEventHandler {
 
     private RecipePanel activePanel = null;
     private boolean lastLeftDown = false;
+    private int pendingScroll = 0;
+
+    // 在 RenderTickEvent.START 最高优先级捕获滚轮值，早于 MouseTweaks
+    @SubscribeEvent(priority = EventPriority.HIGHEST)
+    public void onRenderTickStart(TickEvent.RenderTickEvent event) {
+        if (event.phase != TickEvent.Phase.START) return;
+        if (activePanel == null) return;
+        int dwheel = Mouse.getDWheel();
+        if (dwheel != 0) {
+            pendingScroll += dwheel;
+        }
+    }
 
     @SubscribeEvent
     public void onGuiOpen(GuiOpenEvent event) {
@@ -70,12 +84,12 @@ public class GuiEventHandler {
         boolean clicked = leftDown && !lastLeftDown;
         lastLeftDown = leftDown;
 
-        // Scroll wheel
-        int dwheel = Mouse.getDWheel();
-        if (dwheel != 0) {
+        // Scroll wheel — value captured in onRenderTickStart before MouseTweaks consumes it
+        if (pendingScroll != 0) {
             if (RecipePanelRenderer.isPanelHit(activePanel, guiLeft, guiTop, mx, my)) {
-                activePanel.scroll(dwheel < 0 ? 1 : -1);
+                activePanel.scroll(pendingScroll < 0 ? 1 : -1);
             }
+            pendingScroll = 0;
             return;
         }
 
