@@ -122,6 +122,6 @@ public class PacketHandler implements IPacketHandler {
     private boolean matches(ItemStack stack, ItemStack required, boolean ignoreDamage) {
         if (stack.itemID != required.itemID) return false;
         if (!ignoreDamage && stack.getItemDamage() != required.getItemDamage()) return false;
-        return true;
+        return ItemStack.areItemStackTagsEqual(stack, required);
     }
 }
