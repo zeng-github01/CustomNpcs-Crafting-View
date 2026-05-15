@@ -30,7 +30,6 @@ public class RecipePanelRenderer {
     private static final int CATEGORY_TAB_H = 14;
     private static final int RECIPE_ROW_H = 16;
     private static final int GRID_CELL = 16;
-    private static final int GRID_BLOCK_H = 10 + 4 * (GRID_CELL + 1) + PADDING;
 
     private static final int COLOR_BG = 0xCC2D2D2D;
     private static final int COLOR_BORDER = 0xFF555555;
@@ -51,8 +50,10 @@ public class RecipePanelRenderer {
     private static final int LIST_BASE_OFFSET = HEADER_TO_CATS_OFFSET + CATEGORY_TAB_H + 2 + 1 + 3 + 7;
 
     public static void render(GuiCarpentryBenchWrapper gui, RecipePanel panel, int mouseX, int mouseY) {
-        int guiLeft = gui.getGuiLeft();
-        int guiTop = gui.getGuiTop();
+        render(gui, panel, gui.getGuiLeft(), gui.getGuiTop(), mouseX, mouseY);
+    }
+
+    public static void render(GuiScreen gui, RecipePanel panel, int guiLeft, int guiTop, int mouseX, int mouseY) {
 
         int px = panel.getPanelX(guiLeft);
         int py = guiTop;
@@ -88,9 +89,10 @@ public class RecipePanelRenderer {
 
             cy += RECIPE_ROW_H;
             if (selected) {
-                ItemStack gridTooltip = drawIngredientGrid(cx, cy, recipe, mouseX, mouseY, fr);
+                int gridSize = panel.isGlobalWorkbenchOnly() ? 3 : 4;
+                ItemStack gridTooltip = drawIngredientGrid(cx, cy, recipe, gridSize, mouseX, mouseY, fr);
                 if (gridTooltip != null) tooltipStack = gridTooltip;
-                cy += GRID_BLOCK_H;
+                cy += getGridBlockHeight(panel);
             }
         }
 
@@ -106,7 +108,7 @@ public class RecipePanelRenderer {
     private static int drawHeader(int cx, int px, int cy, int pw, RecipePanel panel,
         int mouseX, int mouseY, FontRenderer fr) {
 
-        fr.drawString(panel.isAnvil() ? "Anvil" : "Carpentry", cx, cy, COLOR_TEXT);
+        fr.drawString(panel.isGlobalWorkbenchOnly() ? "Workbench" : (panel.isAnvil() ? "Anvil" : "Carpentry"), cx, cy, COLOR_TEXT);
         cy += 10;
 
         GuiTextField tf = panel.buildSearchField(cx, cy);
@@ -155,7 +157,7 @@ public class RecipePanelRenderer {
         return tooltipStack;
     }
 
-    private static ItemStack drawIngredientGrid(int cx, int cy, RecipeCarpentry recipe,
+    private static ItemStack drawIngredientGrid(int cx, int cy, RecipeCarpentry recipe, int gridSize,
         int mouseX, int mouseY, FontRenderer fr) {
 
         fr.drawString("Recipe:", cx, cy, COLOR_TEXT_DIM);
@@ -164,8 +166,8 @@ public class RecipePanelRenderer {
         ItemStack tooltipStack = null;
         int rw = recipe.recipeWidth;
         int rh = recipe.recipeHeight;
-        for (int row = 0; row < 4; row++) {
-            for (int col = 0; col < 4; col++) {
+        for (int row = 0; row < gridSize; row++) {
+            for (int col = 0; col < gridSize; col++) {
                 int gx = cx + col * (GRID_CELL + 1);
                 int gy = cy + row * (GRID_CELL + 1);
                 drawRect(gx, gy, gx + GRID_CELL, gy + GRID_CELL, 0xFF333333);
@@ -185,7 +187,7 @@ public class RecipePanelRenderer {
         int h = LIST_BASE_OFFSET;
         for (int i = 0; i < visible.size(); i++) {
             h += RECIPE_ROW_H;
-            if (visible.get(i) == sel) h += GRID_BLOCK_H;
+            if (visible.get(i) == sel) h += getGridBlockHeight(panel);
         }
         boolean canScrollDown = panel.getFilteredSize() > panel.getScrollOffset() + panel.getVisiblePerPage();
         if (canScrollDown) h += 10;
@@ -279,11 +281,11 @@ public class RecipePanelRenderer {
         return -1;
     }
 
-    private static int getRowY(int baseY, List visible, RecipeCarpentry sel, int targetIndex) {
+    private static int getRowY(int baseY, List visible, RecipeCarpentry sel, RecipePanel panel, int targetIndex) {
         int cy = baseY;
         for (int i = 0; i < targetIndex; i++) {
             cy += RECIPE_ROW_H;
-            if (visible.get(i) == sel) cy += GRID_BLOCK_H;
+            if (visible.get(i) == sel) cy += getGridBlockHeight(panel);
         }
         return cy;
     }
@@ -294,7 +296,7 @@ public class RecipePanelRenderer {
         List visible = panel.getVisible();
         RecipeCarpentry sel = panel.getSelectedRecipe();
         for (int i = 0; i < visible.size(); i++) {
-            int ry = getRowY(guiTop + LIST_BASE_OFFSET, visible, sel, i);
+            int ry = getRowY(guiTop + LIST_BASE_OFFSET, visible, sel, panel, i);
             if (mx >= cx && mx < px + RecipePanel.PANEL_WIDTH - PADDING
                 && my >= ry && my < ry + RECIPE_ROW_H) return i;
         }
@@ -305,9 +307,14 @@ public class RecipePanelRenderer {
         int px = panel.getPanelX(guiLeft);
         List visible = panel.getVisible();
         RecipeCarpentry sel = panel.getSelectedRecipe();
-        int ry = getRowY(guiTop + LIST_BASE_OFFSET, visible, sel, rowIndex);
+        int ry = getRowY(guiTop + LIST_BASE_OFFSET, visible, sel, panel, rowIndex);
         int btnX = px + RecipePanel.PANEL_WIDTH - PADDING - 12;
         return mx >= btnX && mx < btnX + 10 && my >= ry + 3 && my < ry + 13;
+    }
+
+    private static int getGridBlockHeight(RecipePanel panel) {
+        int gridSize = panel.isGlobalWorkbenchOnly() ? 3 : 4;
+        return 10 + gridSize * (GRID_CELL + 1) + PADDING;
     }
 
     public static boolean isPanelHit(RecipePanel panel, int guiLeft, int guiTop, int mx, int my) {

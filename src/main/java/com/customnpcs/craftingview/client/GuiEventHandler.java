@@ -22,6 +22,12 @@ public class GuiEventHandler {
                 event.gui = new GuiCarpentryBenchWrapper(
                     (ContainerCarpentryBench) gc.inventorySlots);
             }
+        } else if (GuiTwilightUncraftingWrapper.isTwilightGui(event.gui)
+                && !(event.gui instanceof GuiTwilightUncraftingWrapper)) {
+            GuiContainer gc = (GuiContainer) event.gui;
+            if (GuiTwilightUncraftingWrapper.isTwilightContainer(gc.inventorySlots)) {
+                event.gui = new GuiTwilightUncraftingWrapper(gc.inventorySlots);
+            }
         }
     }
 }

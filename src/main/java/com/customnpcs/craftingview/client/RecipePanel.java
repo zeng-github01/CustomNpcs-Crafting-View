@@ -1,6 +1,7 @@
 package com.customnpcs.craftingview.client;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
 
 import net.minecraft.client.Minecraft;
@@ -24,6 +25,7 @@ public class RecipePanel {
         "Browse All", new ArrayList(), new ArrayList());
 
     private final boolean isAnvil;
+    private final boolean globalWorkbenchOnly;
     private final List allRecipes = new ArrayList();
     private final List filtered = new ArrayList();
     private final List categories = new ArrayList();
@@ -40,16 +42,44 @@ public class RecipePanel {
     public GuiTextField searchField;
 
     public RecipePanel(boolean isAnvil) {
-        this.isAnvil = isAnvil;
+        this(isAnvil, false);
+    }
 
-        if (RecipeController.instance != null) {
-            allRecipes.addAll(RecipeController.instance.anvilRecipes.values());
-        }
+    public RecipePanel(boolean isAnvil, boolean globalWorkbenchOnly) {
+        this.isAnvil = isAnvil;
+        this.globalWorkbenchOnly = globalWorkbenchOnly;
+
+        reloadRecipes();
 
         categories.add(BROWSE_ALL);
         categories.addAll(Config.categories);
 
         rebuildFiltered();
+    }
+
+    public void reloadRecipes() {
+        allRecipes.clear();
+        if (globalWorkbenchOnly) {
+            HashMap syncedRecipes = TwilightRecipeSyncClient.getSyncedGlobalRecipes();
+            for (Object obj : syncedRecipes.values()) {
+                RecipeCarpentry recipe = (RecipeCarpentry) obj;
+                if (recipe.recipeWidth <= 3 && recipe.recipeHeight <= 3) {
+                    allRecipes.add(recipe);
+                }
+            }
+            if (RecipeController.instance != null) {
+                for (Object obj : RecipeController.instance.globalRecipes.values()) {
+                    RecipeCarpentry recipe = (RecipeCarpentry) obj;
+                    if (recipe.recipeWidth <= 3 && recipe.recipeHeight <= 3
+                            && !syncedRecipes.containsKey(Integer.valueOf(recipe.id))) {
+                        allRecipes.add(recipe);
+                    }
+                }
+            }
+        } else if (RecipeController.instance != null) {
+            allRecipes.addAll(RecipeController.instance.anvilRecipes.values());
+        }
+        if (!categories.isEmpty()) rebuildFiltered();
     }
 
     public GuiTextField buildSearchField(int x, int y) {
@@ -144,5 +174,6 @@ public class RecipePanel {
     public int getActiveCategoryIndex() { return activeCategoryIndex; }
     public List getCategories() { return categories; }
     public boolean isAnvil() { return isAnvil; }
+    public boolean isGlobalWorkbenchOnly() { return globalWorkbenchOnly; }
     public int getPanelX(int guiLeft) { return guiLeft - PANEL_WIDTH - 4; }
 }
