@@ -37,7 +37,7 @@ public class GuiTwilightUncraftingWrapper extends GuiContainer {
 
     public GuiTwilightUncraftingWrapper(Container container) {
         super(container);
-        this.panel = new RecipePanel(false, true);
+        this.panel = new RecipePanel(false, RecipePanel.SOURCE_WORKBENCH);
         Minecraft.getMinecraft().getNetHandler().addToSendQueue(
             PacketHandler.buildRequestGlobalRecipesPacket());
     }

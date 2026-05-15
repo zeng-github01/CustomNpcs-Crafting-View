@@ -10,32 +10,50 @@ import net.minecraftforge.common.Configuration;
 public class Config {
 
     private static final List<CategoryDefinition> categoriesMutable = new ArrayList();
+    private static final List<CategoryDefinition> workbenchCategoriesMutable = new ArrayList();
     public static final List<CategoryDefinition> categories = Collections.unmodifiableList(categoriesMutable);
+    public static final List<CategoryDefinition> workbenchCategories = Collections.unmodifiableList(workbenchCategoriesMutable);
 
     public static void load(File configFile) {
         Configuration cfg = new Configuration(configFile);
         try {
             cfg.load();
 
-            int count = 0;
-            while (cfg.hasKey("categories", "category_" + count)) {
-                count++;
-            }
-
+            categoriesMutable.clear();
+            int count = countCategories(cfg, "categories");
             if (count == 0) {
                 cfg.get("categories", "category_0", "example||Gun Wooden,Gun Stone,Gun Iron,Gun Gold,Gun Diamond,Gun Emerald,Gun Bronze|").comment =
-                    "格式: 分类名|recipeId1,recipeId2,...|recipeName1,recipeName2,...  留空表示不过滤";
+                    "格式: 分类名|recipeId1,recipeId2,...|recipeName1,recipeName2,...  留空表示不过滤。此分组只用于 CustomNPCs 木工台/铁砧侧栏";
                 count = 1;
             }
+            loadCategories(cfg, "categories", count, categoriesMutable);
 
-            categoriesMutable.clear();
-            for (int i = 0; i < count; i++) {
-                String raw = cfg.get("categories", "category_" + i, "").getString();
-                CategoryDefinition def = parse(raw);
-                if (def != null) categoriesMutable.add(def);
+            workbenchCategoriesMutable.clear();
+            int workbenchCount = countCategories(cfg, "workbench_categories");
+            if (workbenchCount == 0) {
+                cfg.get("workbench_categories", "category_0", "example_workbench||Npc Wand,Npc Cloner,Carpentry Bench,Mana|").comment =
+                    "格式: 分类名|recipeId1,recipeId2,...|recipeName1,recipeName2,...  留空表示不过滤。此分组只用于暮色拆解台/原版 3x3 工作台配方侧栏";
+                workbenchCount = 1;
             }
+            loadCategories(cfg, "workbench_categories", workbenchCount, workbenchCategoriesMutable);
         } finally {
             if (cfg.hasChanged()) cfg.save();
+        }
+    }
+
+    private static int countCategories(Configuration cfg, String section) {
+        int count = 0;
+        while (cfg.hasKey(section, "category_" + count)) {
+            count++;
+        }
+        return count;
+    }
+
+    private static void loadCategories(Configuration cfg, String section, int count, List target) {
+        for (int i = 0; i < count; i++) {
+            String raw = cfg.get(section, "category_" + i, "").getString();
+            CategoryDefinition def = parse(raw);
+            if (def != null) target.add(def);
         }
     }
 

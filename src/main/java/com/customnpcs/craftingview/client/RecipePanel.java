@@ -21,11 +21,14 @@ public class RecipePanel {
     public static final int PANEL_WIDTH = 124;
     public static final int RECIPES_PER_PAGE = 7;
 
+    public static final int SOURCE_CARPENTRY = 0;
+    public static final int SOURCE_WORKBENCH = 1;
+
     public static final CategoryDefinition BROWSE_ALL = new CategoryDefinition(
         "Browse All", new ArrayList(), new ArrayList());
 
     private final boolean isAnvil;
-    private final boolean globalWorkbenchOnly;
+    private final int recipeSource;
     private final List allRecipes = new ArrayList();
     private final List filtered = new ArrayList();
     private final List categories = new ArrayList();
@@ -42,24 +45,24 @@ public class RecipePanel {
     public GuiTextField searchField;
 
     public RecipePanel(boolean isAnvil) {
-        this(isAnvil, false);
+        this(isAnvil, SOURCE_CARPENTRY);
     }
 
-    public RecipePanel(boolean isAnvil, boolean globalWorkbenchOnly) {
+    public RecipePanel(boolean isAnvil, int recipeSource) {
         this.isAnvil = isAnvil;
-        this.globalWorkbenchOnly = globalWorkbenchOnly;
+        this.recipeSource = recipeSource;
 
         reloadRecipes();
 
         categories.add(BROWSE_ALL);
-        categories.addAll(Config.categories);
+        categories.addAll(recipeSource == SOURCE_WORKBENCH ? Config.workbenchCategories : Config.categories);
 
         rebuildFiltered();
     }
 
     public void reloadRecipes() {
         allRecipes.clear();
-        if (globalWorkbenchOnly) {
+        if (recipeSource == SOURCE_WORKBENCH) {
             HashMap syncedRecipes = TwilightRecipeSyncClient.getSyncedGlobalRecipes();
             for (Object obj : syncedRecipes.values()) {
                 RecipeCarpentry recipe = (RecipeCarpentry) obj;
@@ -174,6 +177,6 @@ public class RecipePanel {
     public int getActiveCategoryIndex() { return activeCategoryIndex; }
     public List getCategories() { return categories; }
     public boolean isAnvil() { return isAnvil; }
-    public boolean isGlobalWorkbenchOnly() { return globalWorkbenchOnly; }
+    public boolean isWorkbenchSource() { return recipeSource == SOURCE_WORKBENCH; }
     public int getPanelX(int guiLeft) { return guiLeft - PANEL_WIDTH - 4; }
 }

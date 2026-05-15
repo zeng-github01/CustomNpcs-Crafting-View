@@ -117,6 +117,11 @@ This keeps Twilight Forest optional and confines compatibility behavior to the r
 ## Required Patterns
 
 - Keep existing CustomNPCs Carpentry/Anvil paths unchanged unless the task explicitly asks for a behavior change.
+- Keep CustomNPCs Carpentry/Anvil and vanilla-workbench/Twilight recipe concerns separated:
+  - shared UI renderer code may be reused, but the panel model must carry an explicit source/context rather than a boolean whose meaning can leak across callers;
+  - CustomNPCs Carpentry/Anvil panels must read and fill from `RecipeController.instance.anvilRecipes` only;
+  - Twilight/vanilla-workbench panels must read and fill from `RecipeController.instance.globalRecipes` only;
+  - config categories for these contexts must be separate so a workbench compatibility category cannot hide Carpentry/Anvil recipes.
 - For optional integrations, use class-name checks plus reflection for optional fields/methods.
 - For client-only behavior, route through the sided proxy so common/server code does not reference client classes.
 
@@ -135,6 +140,7 @@ This keeps Twilight Forest optional and confines compatibility behavior to the r
 - [ ] Optional dependency classes are not imported directly.
 - [ ] Network packet directions and payload fields are explicit.
 - [ ] Server packet handlers validate the currently open container before mutating inventories.
-- [ ] Recipe sources match the target grid type (`globalRecipes` for vanilla 3x3; `anvilRecipes` for CustomNPCs Carpentry/Anvil).
+- [ ] Recipe sources match the target grid type (`globalRecipes` for vanilla 3x3; `anvilRecipes` for CustomNPCs Carpentry/Anvil), including both display and fill packet handling.
+- [ ] Config categories are scoped to the same recipe source as the panel using them.
 - [ ] Existing inventory contents are returned/dropped before being overwritten.
 - [ ] Build/check commands and Java version are recorded.

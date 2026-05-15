@@ -89,7 +89,7 @@ public class RecipePanelRenderer {
 
             cy += RECIPE_ROW_H;
             if (selected) {
-                int gridSize = panel.isGlobalWorkbenchOnly() ? 3 : 4;
+                int gridSize = panel.isWorkbenchSource() ? 3 : 4;
                 ItemStack gridTooltip = drawIngredientGrid(cx, cy, recipe, gridSize, mouseX, mouseY, fr);
                 if (gridTooltip != null) tooltipStack = gridTooltip;
                 cy += getGridBlockHeight(panel);
@@ -108,7 +108,7 @@ public class RecipePanelRenderer {
     private static int drawHeader(int cx, int px, int cy, int pw, RecipePanel panel,
         int mouseX, int mouseY, FontRenderer fr) {
 
-        fr.drawString(panel.isGlobalWorkbenchOnly() ? "Workbench" : (panel.isAnvil() ? "Anvil" : "Carpentry"), cx, cy, COLOR_TEXT);
+        fr.drawString(panel.isWorkbenchSource() ? "Workbench" : (panel.isAnvil() ? "Anvil" : "Carpentry"), cx, cy, COLOR_TEXT);
         cy += 10;
 
         GuiTextField tf = panel.buildSearchField(cx, cy);
@@ -313,7 +313,7 @@ public class RecipePanelRenderer {
     }
 
     private static int getGridBlockHeight(RecipePanel panel) {
-        int gridSize = panel.isGlobalWorkbenchOnly() ? 3 : 4;
+        int gridSize = panel.isWorkbenchSource() ? 3 : 4;
         return 10 + gridSize * (GRID_CELL + 1) + PADDING;
     }
 

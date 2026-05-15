@@ -111,7 +111,7 @@ public class PacketHandler implements IPacketHandler {
         noppes.npcs.containers.ContainerCarpentryBench container =
                 (noppes.npcs.containers.ContainerCarpentryBench) player.openContainer;
 
-        noppes.npcs.controllers.RecipeCarpentry recipe = getRecipe(recipeId);
+        noppes.npcs.controllers.RecipeCarpentry recipe = getCarpentryRecipe(recipeId);
         if (recipe == null) return;
 
         int rw = recipe.recipeWidth;
@@ -210,9 +210,10 @@ public class PacketHandler implements IPacketHandler {
             (noppes.npcs.controllers.RecipeCarpentry) rc.globalRecipes.get(Integer.valueOf(recipeId));
     }
 
-    private noppes.npcs.controllers.RecipeCarpentry getRecipe(int recipeId) {
+    private noppes.npcs.controllers.RecipeCarpentry getCarpentryRecipe(int recipeId) {
         noppes.npcs.controllers.RecipeController rc = noppes.npcs.controllers.RecipeController.instance;
-        return rc == null ? null : rc.getRecipe(recipeId);
+        return rc == null ? null :
+            (noppes.npcs.controllers.RecipeCarpentry) rc.anvilRecipes.get(Integer.valueOf(recipeId));
     }
 
     private void returnToInventory(EntityPlayerMP player, ItemStack stack) {
